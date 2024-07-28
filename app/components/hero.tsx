@@ -1,5 +1,6 @@
 import React from "react";
 import { Spotlight } from "./ui/Spotlight";
+import { GridBackground } from "./ui/gridBackground";
 
 const Hero = () => {
   return (
@@ -15,6 +16,7 @@ const Hero = () => {
         />
         <Spotlight className="top-28 left-80 h-[80vh] w-[50vw]" fill="blue" />
       </div>
+      <GridBackground />
     </div>
   );
 };
