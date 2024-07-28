@@ -2,6 +2,8 @@ import React from "react";
 import { Spotlight } from "./ui/Spotlight";
 import { GridBackgroundDemo } from "./ui/gridBackground";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
+import MagicButton from "./ui/magicButton";
+import { FaLocationArrow } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -24,12 +26,20 @@ const Hero = () => {
             Dynamic Web Magic with Next.js
           </h2>
           <TextGenerateEffect
-            className="text-center text-[40px] md:text-5xl lg:text-6xl"
+            className="text-center text-[40px] md:text-5xl lg:text-6xl py-4"
             words="Transforming Concepts into Compelling User Interfaces"
           />
           <p className="text-center">
             Hi, I&apos;m Josh a NextJS and Ecommerce Developer
           </p>
+          <a href="#about" className="py-4">
+            <MagicButton
+              title="Show my Work"
+              icon={<FaLocationArrow />}
+              position="right"
+              otherClass="gap-2"
+            />
+          </a>
         </div>
       </div>
     </div>
