@@ -1,6 +1,7 @@
 import React from "react";
 import { Spotlight } from "./ui/Spotlight";
-import { GridBackground } from "./ui/gridBackground";
+import { GridBackgroundDemo } from "./ui/gridBackground";
+import { TextGenerateEffect } from "./ui/text-generate-effect";
 
 const Hero = () => {
   return (
@@ -16,7 +17,21 @@ const Hero = () => {
         />
         <Spotlight className="top-28 left-80 h-[80vh] w-[50vw]" fill="blue" />
       </div>
-      <GridBackground />
+      <GridBackgroundDemo className="absolute top-0 left-0" />
+      <div className="flex justify-center relative my-20 z-10">
+        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
+          <h2 className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
+            Dynamic Web Magic with Next.js
+          </h2>
+          <TextGenerateEffect
+            className="text-center text-[40px] md:text-5xl lg:text-6xl"
+            words="Transforming Concepts into Compelling User Interfaces"
+          />
+          <p className="text-center">
+            Hi, I&apos;m Josh a NextJS and Ecommerce Developer
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
