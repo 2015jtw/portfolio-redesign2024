@@ -9,6 +9,7 @@ import {
 import { HoveredLink, Menu } from "./ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import { navItems } from "@/data";
+import { ModeToggle } from "./darkMode";
 
 export const FixedNavbar = () => {
   const { scrollYProgress } = useScroll();
@@ -63,6 +64,7 @@ function Navbar({ className }: { className?: string }) {
             {item.name}
           </HoveredLink>
         ))}
+        <ModeToggle />
       </Menu>
     </div>
   );
