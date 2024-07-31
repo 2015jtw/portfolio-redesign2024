@@ -7,6 +7,7 @@ import RecentProjects from "./components/RecentProjects";
 import { navItems } from "@/data";
 import Approach from "./components/Approach";
 import Footer from "./components/Footer";
+import WorkExperience from "./components/WorkExperience";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <FloatingNav navItems={navItems} />
         <Hero />
         <Grid />
+        <WorkExperience />
         <RecentProjects />
         <Approach />
         <Footer />
