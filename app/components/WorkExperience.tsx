@@ -70,7 +70,7 @@ const ExperienceCard = ({ experience }: { experience: Experience }) => {
 
 const WorkExperience = () => {
   return (
-    <div className="py-10">
+    <div className="py-10" id="work-experience">
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} text-center`}>
           What I have done so far
