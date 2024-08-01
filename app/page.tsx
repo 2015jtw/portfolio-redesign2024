@@ -16,9 +16,10 @@ export default function Home() {
         <FixedNavbar />
         <Hero />
         <Grid />
-        <WorkExperience />
         <RecentProjects />
         <Approach />
+
+        <WorkExperience />
         <Footer />
       </div>
     </main>
