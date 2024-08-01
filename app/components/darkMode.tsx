@@ -8,16 +8,18 @@ import Button from "./ui/Button";
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
 
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
-    <div className="flex space-x-2">
-      <Button variant="outline" size="icon" onClick={() => setTheme("light")}>
+    <Button variant="outline" size="icon" onClick={toggleTheme}>
+      {theme === "dark" ? (
         <Sun className="h-[1.2rem] w-[1.2rem] cursor-pointer" />
-        <span className="sr-only">Light mode</span>
-      </Button>
-      <Button variant="outline" size="icon" onClick={() => setTheme("dark")}>
+      ) : (
         <Moon className="h-[1.2rem] w-[1.2rem] cursor-pointer" />
-        <span className="sr-only">Dark mode</span>
-      </Button>
-    </div>
+      )}
+      <span className="sr-only">Toggle theme</span>
+    </Button>
   );
 }
