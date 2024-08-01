@@ -6,10 +6,14 @@ import React, { useEffect, useRef } from "react";
 
 const Avatar = () => {
   const loadingRef = useRef(null);
-  
+  const containerRef = useRef(null); // Added ref for container
+
   useEffect(() => {
     const loader = new GLTFLoader();
-    const container = document.getElementById('avatar-container');
+    const container = containerRef.current; // Use containerRef
+
+    if (!container) return; // Early return if container is not available
+
     let renderer, scene, camera, controls, mixer;
 
     const setupScene = (gltf) => {
@@ -92,6 +96,7 @@ const Avatar = () => {
         setupScene(gltf);
         if (loadingRef.current) {
           loadingRef.current.style.display = 'none';
+          console.log('Loading complete');
         }
       },
       (xhr) => {
@@ -107,31 +112,32 @@ const Avatar = () => {
     );
 
     return () => {
-        if (renderer) {
-            renderer.dispose();
-            const container = document.getElementById('avatar-container');
-            if (container) {
-              while (container.firstChild) {
-                container.removeChild(container.firstChild);
-              }
-            }
+      // Cleanup
+      if (renderer) {
+        renderer.dispose();
+        if (container) {
+          while (container.firstChild) {
+            container.removeChild(container.firstChild);
           }
-          if (scene) {
-            scene.dispose();
-          }
-          if (controls) {
-            controls.dispose();
-          }
-          if (mixer) {
-            mixer.stopAllAction();
-          }        
+        }
+      }
+      if (scene) {
+        scene.dispose();
+      }
+      if (controls) {
+        controls.dispose();
+      }
+      if (mixer) {
+        mixer.stopAllAction();
+      }
     };
   }, []);
 
   return (
     <div
       id="avatar-container"
-      className="flex justify-center items-center order-1 md:order-2 lg:max-w-[50vw] w-full"
+      ref={containerRef} // Attach ref to container
+      className="flex justify-center items-center order-1 lg:max-w-[50vw] w-full"
     >
       <div id="avatar-loading" ref={loadingRef}>
         LOADING...
