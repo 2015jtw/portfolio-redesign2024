@@ -19,7 +19,6 @@ export default function Home() {
         <Grid />
         <RecentProjects />
         <Approach />
-
         <WorkExperience />
         <Tech />
         <Footer />
