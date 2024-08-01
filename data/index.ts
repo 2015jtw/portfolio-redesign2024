@@ -168,7 +168,59 @@ export const navItems = [
     },  
   ];
   
-  
+  export const technologies = [  {
+    name: "HTML 5",
+    icon: '/technologies/html.png',
+  },
+  {
+    name: "CSS 3",
+    icon: '/technologies/css.png',
+  },
+  {
+    name: "JavaScript",
+    icon: '/technologies/javascript.png',
+  },
+  {
+    name: "TypeScript",
+    icon: '/technologies/typescript.png',
+  },
+  {
+    name: "React JS",
+    icon: '/technologies/reactjs.png',
+  },
+  {
+    name: "Redux Toolkit",
+    icon: '/technologies/redux.png',
+  },
+  {
+    name: "Tailwind CSS",
+    icon: '/technologies/tailwind.png',
+  },
+  {
+    name: "Node JS",
+    icon: '/technologies/nodejs.png',
+  },
+  {
+    name: "MongoDB",
+    icon: '/technologies/mongodb.png',
+  },
+  {
+    name: "Three JS",
+    icon: '/technologies/threejs.svg',
+  },
+  {
+    name: "git",
+    icon: '/technologies/git.png',
+  },
+  {
+    name: "figma",
+    icon: '/technologies/figma.png',
+  },
+  {
+    name: "docker",
+    icon: '/technologies/docker.png',
+  },
+]
   
   export const socialMedia = [
     {

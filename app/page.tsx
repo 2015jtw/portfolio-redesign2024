@@ -8,6 +8,7 @@ import { navItems } from "@/data";
 import Approach from "./components/Approach";
 import Footer from "./components/Footer";
 import WorkExperience from "./components/WorkExperience";
+import Tech from "./components/Tech";
 
 export default function Home() {
   return (
@@ -19,7 +20,8 @@ export default function Home() {
         <RecentProjects />
         <Approach />
 
-        <WorkExperience />
+        {/* <WorkExperience /> */}
+        <Tech />
         <Footer />
       </div>
     </main>
