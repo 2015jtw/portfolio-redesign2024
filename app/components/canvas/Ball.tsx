@@ -10,7 +10,7 @@ import {
 
 import CanvasLoader from "../Loader";
 
-const Ball = (props) => {
+const Ball = (props: any) => {
   const [decal] = useTexture([props.imgUrl]);
 
   return (
@@ -30,14 +30,14 @@ const Ball = (props) => {
           rotation={[2 * Math.PI, 0, 6.25]}
           scale={1}
           map={decal}
-          flatShading
+          // flatShading
         />
       </mesh>
     </Float>
   );
 };
 
-const BallCanvas = ({ icon }) => {
+const BallCanvas = (icon: any) => {
   return (
     <Canvas
       frameloop="demand"
