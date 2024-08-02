@@ -18,9 +18,9 @@ export default function Home() {
         <Hero />
         <Grid />
         <RecentProjects />
-        <Approach />
         <WorkExperience />
         <Tech />
+        <Approach />
         <Footer />
       </div>
     </main>
