@@ -37,7 +37,7 @@ const Ball = (props: any) => {
   );
 };
 
-const BallCanvas = (icon: any) => {
+const BallCanvas = ({ icon }: { icon: string }) => {
   return (
     <Canvas
       frameloop="demand"

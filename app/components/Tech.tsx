@@ -11,7 +11,7 @@ const Tech = () => {
       <h1>Tech Stack</h1>
       {technologies.map((tech, index) => (
         <div key={index} className="w-28 h-28">
-          {/* <BallCanvas icon={tech.icon} /> */}
+          <BallCanvas icon={tech.icon} />
         </div>
       ))}
     </div>
