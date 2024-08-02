@@ -72,11 +72,16 @@ const WorkExperience = () => {
   return (
     <div className="py-10" id="work-experience">
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} text-center`}>
+        <p
+          className={`${styles.sectionSubText} text-center text-black dark:text-white`}
+        >
           What I have done so far
         </p>
-        <h2 className={`${styles.sectionHeadText} text-center`}>
-          Work Experience.
+        <h2
+          className={`${styles.sectionHeadText} text-center text-black dark:text-white`}
+        >
+          Work{" "}
+          <span className="text-blue-500 dark:text-purple ">Experience</span>
         </h2>
       </motion.div>
 

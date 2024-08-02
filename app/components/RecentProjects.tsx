@@ -6,9 +6,9 @@ import { FaLocationArrow } from "react-icons/fa";
 const RecentProjects = () => {
   return (
     <div className="py-20" id="projects">
-      <h1 className="heading text-white">
+      <h1 className="heading">
         A Small Selection of{" "}
-        <span className="text-purple">Recent Projects</span>
+        <span className="text-blue-500 dark:text-purple">Recent Projects</span>
       </h1>
       <div className="flex flex-col lg:flex-row flex-wrap items-center justify-center p-4 gap-x-24 gap-y-24 lg:gap-y-8 mt-10">
         {projects.map(({ title, des, img, id, link, iconLists }) => (
@@ -18,7 +18,7 @@ const RecentProjects = () => {
           >
             <PinContainer title={title} href={link}>
               <div className="relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden lg:h-[30vh] mb-10 sm:h-[40vh] h-[30vh]">
-                <div className="relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]">
+                <div className="relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#2c2f44]">
                   <img src="/bg.png" alt="bg-img" />
                 </div>
                 <img src={img} alt={title} className="z-10 absolute bottom-0" />
@@ -42,10 +42,10 @@ const RecentProjects = () => {
                   ))}
                 </div>
                 <div className="flex justify-center items-center">
-                  <p className="flex lg:text-xl md:text-xs text-sm text-purple">
+                  <p className="flex lg:text-xl md:text-xs text-sm text-blue-500 dark:text-purple">
                     View Project
                   </p>
-                  <FaLocationArrow className="ms-3" color="#CBACF9" />
+                  <FaLocationArrow className="ms-3 text-blue-500 dark:text-purple" />
                 </div>
               </div>
             </PinContainer>

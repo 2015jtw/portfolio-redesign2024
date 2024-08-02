@@ -88,10 +88,21 @@
   }
 }
 
-/* .light-mode-gradient {
-  mask-image: radial-gradient(ellipse at center, transparent 20%, white);
+
+.vertical-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 18px;
+  height: 100%;
+  width: 4px;
+  background: red; /* Default color, will be overridden by Tailwind */
 }
 
-.dark-mode-gradient {
-  mask-image: radial-gradient(ellipse at center, transparent 20%, black);
-} */
+.light .vertical-timeline::before {
+  background-color: black; /* Light mode color */
+}
+
+.dark .vertical-timeline::before {
+  background-color: white; /* Dark mode color */
+}

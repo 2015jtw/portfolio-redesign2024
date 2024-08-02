@@ -41,7 +41,7 @@ const Hero = () => {
               title="Show my Work"
               icon={<FaLocationArrow />}
               position="right"
-              otherClasses="gap-2"
+              otherClasses="gap-2 bg-blue-500"
             />
           </a>
         </div>
