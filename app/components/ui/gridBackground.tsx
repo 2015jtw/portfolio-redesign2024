@@ -9,7 +9,7 @@ export function GridBackgroundDemo({ className }: GridBackgroundDemoProps) {
   return (
     <div
       className={cn(
-        "h-screen w-full dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black/[0.2] flex items-center justify-center",
+        "h-screen w-full dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black/[0.02] flex items-center justify-center",
         className
       )}
     >

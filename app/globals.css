@@ -87,3 +87,11 @@
     background: linear-gradient(90deg, #161a31 0%, #06091f 100%);
   }
 }
+
+/* .light-mode-gradient {
+  mask-image: radial-gradient(ellipse at center, transparent 20%, white);
+}
+
+.dark-mode-gradient {
+  mask-image: radial-gradient(ellipse at center, transparent 20%, black);
+} */
