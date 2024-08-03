@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MagicButton from "./ui/magicButton";
 import { FaLocationArrow } from "react-icons/fa";
 import { socialMedia } from "@/data";
@@ -7,6 +7,11 @@ import { useTheme } from "next-themes";
 
 const Footer = () => {
   const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <footer className="w-full py-10" id="contact">
@@ -15,7 +20,7 @@ const Footer = () => {
           src="/footer-grid.svg"
           alt="footer-grid"
           className={`w-full h-full opacity-40 ${
-            theme === "light" && "filter-light-mode"
+            mounted && theme === "light" && "filter-light-mode"
           }`}
         />
       </div>

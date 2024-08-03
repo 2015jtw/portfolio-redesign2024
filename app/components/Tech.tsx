@@ -5,7 +5,6 @@ import { technologies } from "@/data";
 import BallCanvas from "./canvas/Ball";
 
 const Tech = () => {
-  console.log(technologies);
   return (
     <div className="flex flex-row flex-wrap justify-center gap-10">
       {technologies.map((tech, index) => (
