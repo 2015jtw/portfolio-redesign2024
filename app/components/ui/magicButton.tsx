@@ -24,7 +24,7 @@ const MagicButton: React.FC<MagicButtonProps> = ({
 
       <span
         className={`inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg
-             bg-white dark:bg-slate-950 px-7 text-sm font-medium text-blue-500 dark:text-white backdrop-blur-3xl gap-2 ${otherClasses}`}
+             bg-white dark:bg-slate-950 px-7 text-sm font-semibold text-blue-500 dark:text-white backdrop-blur-3xl gap-2 ${otherClasses}`}
       >
         {position === "left" && icon}
         {title}

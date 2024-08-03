@@ -151,7 +151,3 @@
 .filter-light-mode {
   filter: invert(0) sepia(0) saturate(0) hue-rotate(0deg) brightness(0) contrast(1);
 }
-
-/* body {
-  overflow-x: hidden;
-} */

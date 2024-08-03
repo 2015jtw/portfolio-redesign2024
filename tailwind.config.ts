@@ -26,6 +26,9 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        alegreya: ["var(--font-alegreya)"],
+      },
       colors: {
         black: {
           DEFAULT: "#000",

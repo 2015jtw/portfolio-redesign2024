@@ -8,7 +8,7 @@ import Avatar from "../avatar/avatar";
 
 const Hero = () => {
   return (
-    <div className="pb-20 pt-36 " id="home">
+    <div className="pb-20 pt-36 font-alegreya" id="home">
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -30,7 +30,7 @@ const Hero = () => {
             words="I'm Josh Worden"
           />
 
-          <p className="text-center text-black dark:text-white">
+          <p className="text-center text-black dark:text-white font-normal">
             I am a web developer with a passion for creating interactive,
             performant and accessible user interfaces. Proven experience with
             the NextJS core technologies, as well as Shopfiy and BigCommerce
@@ -41,7 +41,7 @@ const Hero = () => {
               title="Show my Work"
               icon={<FaLocationArrow />}
               position="right"
-              otherClasses="gap-2 bg-blue-500"
+              otherClasses="gap-2 bg-blue-500 font-semibold"
             />
           </a>
         </div>
