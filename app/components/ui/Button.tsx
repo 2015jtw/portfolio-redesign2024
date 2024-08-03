@@ -7,6 +7,7 @@ interface ButtonProps {
   size?: "icon" | "small" | "medium" | "large";
   children: React.ReactNode;
   onClick?: () => void;
+  className?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -14,6 +15,7 @@ const Button: React.FC<ButtonProps> = ({
   size = "medium",
   children,
   onClick,
+  className,
 }) => {
   const buttonClasses = classNames(
     "flex items-center justify-center rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2",
@@ -25,7 +27,8 @@ const Button: React.FC<ButtonProps> = ({
       "px-4 py-2 text-sm": size === "small",
       "px-6 py-3 text-base": size === "medium",
       "px-8 py-4 text-lg": size === "large",
-    }
+    },
+    className // Add the className here
   );
 
   return (

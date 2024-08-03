@@ -137,7 +137,7 @@ const Avatar = () => {
     <div
       id="avatar-container"
       ref={containerRef} // Attach ref to container
-      className="flex justify-center items-center order-1 lg:max-w-[50vw] w-full"
+      className="flex justify-center items-center order-1 lg:max-w-[50vw] w-full h-full min-h-[600px]"
     >
       <div id="avatar-loading" ref={loadingRef}>
         LOADING...

@@ -7,8 +7,8 @@ import { CanvasRevealEffect } from "./ui/CanvasRevealEffect";
 const Approach = () => {
   return (
     <section className="w-full py-20" id="approach">
-      <h1 className="heading py-4 text-white">
-        My <span className="text-purple ">Approach</span>
+      <h1 className="heading py-4 text-black dark:text-white">
+        My <span className="text-blue-500 dark:text-purple ">Approach</span>
       </h1>
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
         <Card
@@ -92,10 +92,10 @@ const Card = ({
           "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
       }}
     >
-      <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white " />
-      <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white " />
-      <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white " />
-      <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-white " />
+      <Icon className="absolute h-6 w-6 -top-3 -left-3 text-black dark:text-white " />
+      <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-black dark:text-white" />
+      <Icon className="absolute h-6 w-6 -top-3 -right-3 text-black dark:text-white" />
+      <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-black dark:text-white" />
 
       <AnimatePresence>
         {hovered && (
