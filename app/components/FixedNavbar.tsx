@@ -12,20 +12,21 @@ import { navItems } from "@/data";
 import { ModeToggle } from "./darkMode";
 
 export const FixedNavbar = () => {
-  const { scrollYProgress } = useScroll();
+  const { scrollY } = useScroll();
   const [visible, setVisible] = useState(true);
 
-  useMotionValueEvent(scrollYProgress, "change", (current) => {
-    if (typeof current === "number") {
-      let direction = current - scrollYProgress.getPrevious()!;
-
-      if (scrollYProgress.get() < 0.05) {
-        setVisible(true); // Always show the navbar at the top
-      } else {
-        setVisible(direction < 0); // Show navbar when scrolling up, hide when scrolling down
-      }
+  useMotionValueEvent(scrollY, "change", (current) => {
+    let direction = current - scrollY.getPrevious()!;
+    if (current < 5) {
+      setVisible(true); // Always show the navbar at the top
+    } else {
+      setVisible(direction < 0); // Show navbar when scrolling up, hide when scrolling down
     }
   });
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <AnimatePresence mode="wait">
@@ -45,13 +46,19 @@ export const FixedNavbar = () => {
           "fixed top-0 inset-x-0 max-w-2xl mx-auto z-50 transition-transform duration-300"
         )}
       >
-        <Navbar />
+        <Navbar scrollToTop={scrollToTop} />
       </motion.div>
     </AnimatePresence>
   );
 };
 
-function Navbar({ className }: { className?: string }) {
+function Navbar({
+  className,
+  scrollToTop,
+}: {
+  className?: string;
+  scrollToTop: () => void;
+}) {
   const [active, setActive] = useState<string | null>(null);
 
   return (
@@ -60,7 +67,7 @@ function Navbar({ className }: { className?: string }) {
     >
       <Menu setActive={setActive}>
         {navItems.map((item) => (
-          <HoveredLink key={item.name} href={item.link}>
+          <HoveredLink key={item.name} href={item.link} onClick={scrollToTop}>
             {item.name}
           </HoveredLink>
         ))}
@@ -69,3 +76,5 @@ function Navbar({ className }: { className?: string }) {
     </div>
   );
 }
+
+export default FixedNavbar;

@@ -44,7 +44,7 @@ const Footer = () => {
         </a>
       </div>
       <div className="flex md:flex-row flex-col justify-between items-center mt-20">
-        <p className="md:text-base text-sm md:font-normal font-light">
+        <p className="md:text-base text-sm md:font-normal font-light py-4 md:py-0">
           Copyright © 2024 JTW. All rights reserved.
         </p>
         <div className="flex items-center md:gap-3 gap-6">
