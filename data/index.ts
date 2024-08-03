@@ -226,13 +226,16 @@ export const navItems = [
     {
       id: 1,
       img: "/git.svg",
-    },
-    {
-      id: 2,
-      img: "/twit.svg",
+      link: 'https://github.com/2015jtw'
     },
     {
       id: 3,
       img: "/link.svg",
+      link: 'https://www.linkedin.com/in/josh-worden/'
+    },
+    {
+      id: 2,
+      img: "/twit.svg",
+      link: 'https://x.com/Josh92077308'
     },
   ];
