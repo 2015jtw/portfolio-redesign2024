@@ -28,9 +28,7 @@ const Footer = () => {
       <div className="flex flex-col items-center ">
         <h1 className="heading lg:max-w-[45vw]">
           Ready to take{" "}
-          <span className="text-blue-500 dark:text-purple">
-            your next project
-          </span>{" "}
+          <span className="text-blue-500 dark:text-purple">your project</span>{" "}
           to the next level?
         </h1>
         <p className="text-black dark:text-white md:mt-10 my-5 text-center">
