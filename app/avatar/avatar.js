@@ -7,6 +7,7 @@ import React, { useEffect, useRef } from "react";
 const Avatar = () => {
   const loadingRef = useRef(null);
   const containerRef = useRef(null); // Added ref for container
+  let isMobile = window.innerWidth <= 768; // Adjust breakpoint as needed
 
   useEffect(() => {
     const loader = new GLTFLoader();
@@ -111,6 +112,21 @@ const Avatar = () => {
       }
     );
 
+    // Apply styles based on device width
+    const applyStyles = () => {
+      if (container) {
+        container.style.touchAction = isMobile ? 'none' : 'auto';
+        container.style.pointerEvents = isMobile ? 'none' : 'auto';
+      }
+    };
+
+    applyStyles(); // Apply styles initially
+    window.addEventListener('resize', () => {
+      // Update the isMobile flag and reapply styles on resize
+      isMobile = window.innerWidth <= 768;
+      applyStyles();
+    });
+
     return () => {
       // Cleanup
       if (renderer) {
@@ -130,8 +146,9 @@ const Avatar = () => {
       if (mixer) {
         mixer.stopAllAction();
       }
+      window.removeEventListener('resize', applyStyles); // Clean up resize listener
     };
-  }, []);
+  }, [isMobile]); // Dependency array to re-run effect on device width change
 
   return (
     <div
