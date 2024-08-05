@@ -7,12 +7,13 @@ import React, { useEffect, useRef } from "react";
 const Avatar = () => {
   const loadingRef = useRef(null);
   const containerRef = useRef(null); // Added ref for container
-  let isMobile = window.innerWidth <= 768; // Adjust breakpoint as needed
+  // let isMobile = window.innerWidth <= 768;
+  let isMobile;
 
   useEffect(() => {
     const loader = new GLTFLoader();
     const container = containerRef.current; // Use containerRef
-
+    isMobile = window.innerWidth <= 768;
     if (!container) return; // Early return if container is not available
 
     let renderer, scene, camera, controls, mixer;
@@ -117,6 +118,7 @@ const Avatar = () => {
       if (container) {
         container.style.touchAction = isMobile ? 'none' : 'auto';
         container.style.pointerEvents = isMobile ? 'none' : 'auto';
+        
       }
     };
 
@@ -154,9 +156,9 @@ const Avatar = () => {
     <div
       id="avatar-container"
       ref={containerRef} // Attach ref to container
-      className="flex justify-center items-center order-1 lg:max-w-[50vw] w-full h-full min-h-[600px]"
+      className="flex justify-center items-center order-1 lg:max-w-[50vw] w-full h-full min-h-[600px] cursor-none lg:cursor-pointer"
     >
-      <div id="avatar-loading" ref={loadingRef}>
+      <div id="avatar-loading" ref={loadingRef} >
         LOADING...
       </div>
     </div>
