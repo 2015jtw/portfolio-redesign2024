@@ -24,6 +24,7 @@ export interface Experience {
 }
 
 const ExperienceCard = ({ experience }: { experience: Experience }) => {
+  console.log(experience);
   return (
     <VerticalTimelineElement
       visible={true}
