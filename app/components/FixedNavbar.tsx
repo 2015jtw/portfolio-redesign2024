@@ -68,7 +68,7 @@ function Navbar({
     >
       <Menu setActive={setActive}>
         <Link href="#home">
-          <Image src="/logoArt.png" alt="Logo" height={35} width={35} />
+          <Image src="/hipster-logo.svg" alt="Logo" height={50} width={50} />
         </Link>
         {navItems.map((item) => (
           <HoveredLink key={item.name} href={item.link} onClick={scrollToTop}>
