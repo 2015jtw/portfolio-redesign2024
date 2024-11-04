@@ -10,7 +10,8 @@ import { HoveredLink, Menu } from "./ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import { navItems } from "@/data";
 import { ModeToggle } from "./darkMode";
-
+import Image from "next/image";
+import Link from "next/link";
 export const FixedNavbar = () => {
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(true);
@@ -66,6 +67,9 @@ function Navbar({
       className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
     >
       <Menu setActive={setActive}>
+        <Link href="#home">
+          <Image src="/logoArt.png" alt="Logo" height={35} width={35} />
+        </Link>
         {navItems.map((item) => (
           <HoveredLink key={item.name} href={item.link} onClick={scrollToTop}>
             {item.name}
