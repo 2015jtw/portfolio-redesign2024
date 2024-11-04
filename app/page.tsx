@@ -3,12 +3,12 @@ import Hero from "./components/hero";
 import { FixedNavbar } from "./components/FixedNavbar";
 import { FaHome } from "react-icons/fa";
 import Grid from "./components/grid";
-import RecentProjects from "./components/RecentProjects";
 import { navItems } from "@/data";
 import Approach from "./components/Approach";
 import Footer from "./components/Footer";
 import WorkExperience from "./components/WorkExperience";
 import Tech from "./components/Tech";
+import Projects from "./components/Projects";
 
 export default function Home() {
   return (
@@ -17,10 +17,9 @@ export default function Home() {
         <FixedNavbar />
         <Hero />
         <Grid />
-        <RecentProjects />
+        <Projects />
+
         <WorkExperience />
-        <Tech />
-        <Approach />
         <Footer />
       </div>
     </main>
