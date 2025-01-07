@@ -1,14 +1,18 @@
+// React/Next
 import Image from "next/image";
+
+// UI
 import Hero from "./components/hero";
 import { FixedNavbar } from "./components/FixedNavbar";
+import Footer from "./components/Footer";
+import WorkExperience from "./components/WorkExperience";
+import Tech from "./components/Tech";
+import PersonalProjects from "./components/PersonalProjects";
 import { FaHome } from "react-icons/fa";
 import Grid from "./components/grid";
 import { navItems } from "@/data";
 import Approach from "./components/Approach";
-import Footer from "./components/Footer";
-import WorkExperience from "./components/WorkExperience";
-import Tech from "./components/Tech";
-import Projects from "./components/Projects";
+import FreelanceProjects from "./components/FreelanceProjects";
 
 export default function Home() {
   return (
@@ -17,7 +21,8 @@ export default function Home() {
         <FixedNavbar />
         <Hero />
         <Grid />
-        <Projects />
+        <FreelanceProjects />
+        <PersonalProjects />
         <WorkExperience />
         <Footer />
       </div>

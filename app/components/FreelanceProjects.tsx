@@ -1,43 +1,43 @@
 "use client";
 
-import { FaLocationArrow } from "react-icons/fa6";
+// React/NextJS
 import Link from "next/link";
+import Image from "next/image";
+
+// UI
+import { FaLocationArrow } from "react-icons/fa6";
 import Tech from "./Tech";
-import { projects } from "@/data";
 import { PinContainer } from "./ui/3d-pin";
 
-const Projects = () => {
+// Data
+import { freelanceProjects, projects } from "@/data";
+
+const FreelanceProjects = () => {
   return (
-    <div className="py-20" id="projects">
+    <div className="py-20" id="freelance">
       <h1 className="heading pb-6">
-        A small selection of{" "}
-        <span className="text-purple">recent projects</span>
+        From Concept to Code:{" "}
+        <span className="dark:text-purple text-blue-500">
+          Recent Client Work
+        </span>
       </h1>
-      <div className="py-4">
-        <Tech />
-      </div>
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 ">
-        {projects.map((item) => (
+        {freelanceProjects.map((item) => (
           <div
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
             key={item.id}
           >
             <PinContainer
-              title="/ui.aceternity.com"
+              title={item.title}
               href="https://twitter.com/mannupaaji"
             >
-              <Link href={item.link}>
-                <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
-                  <div
-                    className="relative w-full h-full overflow-hidden lg:rounded-3xl"
-                    style={{ backgroundColor: "#13162D" }}
-                  >
-                    <img src="/bg.png" alt="bgimg" />
-                  </div>
-                  <img
+              <Link href={item.link} target="_blank">
+                <div className="relative flex items-center justify-center sm:w-96 w-[80vw] h-[20vh] lg:h-[30vh] mb-10">
+                  <Image
                     src={item.img}
                     alt="cover"
-                    className="z-10 absolute bottom-0"
+                    className="rounded-md object-cover"
+                    layout="fill"
                   />
                 </div>
 
@@ -46,13 +46,12 @@ const Projects = () => {
                 </h1>
 
                 <p
-                  className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
+                  className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2 dark:text-gray-400 text-black"
                   style={{
-                    color: "#BEC1DD",
                     margin: "1vh 0",
                   }}
                 >
-                  {item.des}
+                  {item.desc}
                 </p>
 
                 <div className="flex items-center justify-between mt-7 mb-3">
@@ -65,16 +64,22 @@ const Projects = () => {
                           transform: `translateX(-${5 * index + 2}px)`,
                         }}
                       >
-                        <img src={icon} alt="icon5" className="p-2" />
+                        <Image
+                          src={icon}
+                          alt="icons"
+                          className="p-2"
+                          width={32}
+                          height={32}
+                        />
                       </div>
                     ))}
                   </div>
 
                   <div className="flex justify-center items-center">
-                    <p className="flex lg:text-xl md:text-xs text-sm text-purple">
+                    <p className="flex lg:text-xl md:text-xs text-sm dark:text-purple text-blue-500">
                       Check Live Site
                     </p>
-                    <FaLocationArrow className="ms-3" color="#CBACF9" />
+                    <FaLocationArrow className="ms-3 text-blue-500 dark:text-purple" />
                   </div>
                 </div>
               </Link>
@@ -86,4 +91,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default FreelanceProjects;

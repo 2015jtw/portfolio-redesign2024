@@ -1,4 +1,7 @@
+import { v4 as uuidv4 } from "uuid";
+
 export const navItems = [
+  { name: "Freelance", link: "#freelance" },
   { name: "Projects", link: "#projects" },
   { name: "Work", link: "#work-experience" },
   { name: "Contact", link: "#contact" },
@@ -68,13 +71,72 @@ export const gridItems = [
   },
 ];
 
+export const freelanceProjects = [
+  {
+    id: uuidv4(),
+    title: "Martii",
+    desc: "Built a high-performance Next.js website with Sanity.io CMS to showcase ESG advisory and grant writing services, featuring branded visuals and optimized content delivery.",
+    img: "/p1.svg",
+    iconLists: [
+      "/nextjs.svg",
+      "/ts.svg",
+      "sanity.svg",
+      "/tailwind.svg",
+      "/shadcn.svg",
+    ],
+    link: "https://mtl-consultancy-nextjs.vercel.app/",
+  },
+  {
+    id: uuidv4(),
+    title: "Thompson LLC",
+    desc: "Developed a high-performance Next.js platform showcasing the company's sustainable development and advisory services across economic growth, urban development, and international programs",
+    img: "/thompson-llc.png",
+    iconLists: [
+      "/nextjs.svg",
+      "/ts.svg",
+      "sanity.svg",
+      "/tailwind.svg",
+      "/shadcn.svg",
+    ],
+    link: "https://thompson-llc.vercel.app/",
+  },
+  {
+    id: uuidv4(),
+    title: "Central Asia Tours GmbH",
+    desc: "Built a multilingual Next.js tourism platform for a leading Uzbekistan travel agency, featuring SEO-optimized city tours and an integrated booking system.",
+    img: "/p3.svg",
+    iconLists: ["/nextjs.svg", "/ts.svg", "/tailwind.svg", "/shadcn.svg"],
+    link: "https://www.centralasiatours.net/de",
+  },
+  {
+    id: uuidv4(),
+    title: "Resilient LLC",
+    desc: "Developed a headless WordPress website using NextJS for Resilient LLC, a consultancy group specializing in crisis management and business continuity.",
+    img: "/p4.svg",
+    iconLists: [
+      "/react.svg",
+      "/nextjs.svg",
+      "/ts.svg",
+      "/tailwind.svg",
+      "/shadcn.svg",
+    ],
+    link: "https://resilient-demo-mu.vercel.app/",
+  },
+];
+
 export const projects = [
   {
     id: 1,
     title: "CampFinder",
     des: "Constructed a secure full-stack application that empowers users to create campground instances, add descriptors such as location, images, price, and title to their respective campgrounds, and review other user's campgrounds.",
     img: "/p1.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+    iconLists: [
+      "/react.svg",
+      "/tailwind.svg",
+      "/ts.svg",
+      "/three.svg",
+      "/framer-motion.svg",
+    ],
     link: "https://campfinderjtw.onrender.com/",
   },
   {
@@ -82,7 +144,13 @@ export const projects = [
     title: "GarmentGrove",
     des: "Architected and developed a full-stack React e-commerce application, providing users with the ability to conveniently browse and shop for products online, add items to their shopping cart, and easily process payments for their selections.",
     img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+    iconLists: [
+      "/next.svg",
+      "/tailwind.svg",
+      "/ts.svg",
+      "/stream.svg",
+      "/c.svg",
+    ],
     link: "https://lambent-babka-6cd623.netlify.app/",
   },
   {
@@ -90,7 +158,13 @@ export const projects = [
     title: "Getricht Resto",
     des: "Developed a fully-responsive SPA for a restaurant, incorporating a featured dish section, a menu section, and a booking section for customers to easily book tables.",
     img: "/p3.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+    iconLists: [
+      "/react.svg",
+      "/tailwind.svg",
+      "/ts.svg",
+      "/three.svg",
+      "/c.svg",
+    ],
     link: "https://eloquent-starship-b4cd67.netlify.app/",
   },
   {
@@ -98,7 +172,13 @@ export const projects = [
     title: "EmojiChirp",
     des: "Built a responsive and user-friendly Twitter clone where users can tweet emojis and hashtags, view their timeline, and interact with other users.",
     img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+    iconLists: [
+      "/next.svg",
+      "/tailwind.svg",
+      "/ts.svg",
+      "/three.svg",
+      "/gsap.svg",
+    ],
     link: "https://github.com/adrianhajdin/iphone",
   },
 ];
