@@ -15,12 +15,12 @@ import { freelanceProjects, projects } from "@/data";
 const FreelanceProjects = () => {
   return (
     <div className="py-20" id="freelance">
-      <h1 className="heading pb-6">
+      <h2 className="heading pb-6">
         From Concept to Code:{" "}
         <span className="dark:text-purple text-blue-500">
           Recent Client Work
         </span>
-      </h1>
+      </h2>
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 ">
         {freelanceProjects.map((item) => (
           <div
@@ -28,7 +28,7 @@ const FreelanceProjects = () => {
             key={item.id}
           >
             <PinContainer
-              title={item.title}
+              title={item.pinTitle}
               href="https://twitter.com/mannupaaji"
             >
               <Link href={item.link} target="_blank">

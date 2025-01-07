@@ -75,8 +75,9 @@ export const freelanceProjects = [
   {
     id: uuidv4(),
     title: "Martii",
+    pinTitle: "Martii",
     desc: "Built a high-performance Next.js website with Sanity.io CMS to showcase ESG advisory and grant writing services, featuring branded visuals and optimized content delivery.",
-    img: "/p1.svg",
+    img: "/martii.png",
     iconLists: [
       "/nextjs.svg",
       "/ts.svg",
@@ -89,6 +90,7 @@ export const freelanceProjects = [
   {
     id: uuidv4(),
     title: "Thompson LLC",
+    pinTitle: "Thompson LLC",
     desc: "Developed a high-performance Next.js platform showcasing the company's sustainable development and advisory services across economic growth, urban development, and international programs",
     img: "/thompson-llc.png",
     iconLists: [
@@ -103,16 +105,18 @@ export const freelanceProjects = [
   {
     id: uuidv4(),
     title: "Central Asia Tours GmbH",
+    pinTitle: "Central Asia",
     desc: "Built a multilingual Next.js tourism platform for a leading Uzbekistan travel agency, featuring SEO-optimized city tours and an integrated booking system.",
-    img: "/p3.svg",
+    img: "/central-asia.png",
     iconLists: ["/nextjs.svg", "/ts.svg", "/tailwind.svg", "/shadcn.svg"],
     link: "https://www.centralasiatours.net/de",
   },
   {
     id: uuidv4(),
     title: "Resilient LLC",
+    pinTitle: "Resilient LLC",
     desc: "Developed a headless WordPress website using NextJS for Resilient LLC, a consultancy group specializing in crisis management and business continuity.",
-    img: "/p4.svg",
+    img: "/resilient-llc.png",
     iconLists: [
       "/react.svg",
       "/nextjs.svg",
@@ -126,10 +130,41 @@ export const freelanceProjects = [
 
 export const projects = [
   {
-    id: 1,
-    title: "CampFinder",
-    des: "Constructed a secure full-stack application that empowers users to create campground instances, add descriptors such as location, images, price, and title to their respective campgrounds, and review other user's campgrounds.",
+    id: uuidv4(),
+    title: "EmojiChirp",
+    pinTitle: "EmojiChirp",
+    des: "Built a responsive and user-friendly Twitter clone where users can tweet emojis and hashtags, view their timeline, and interact with other users.",
     img: "/p1.svg",
+    iconLists: [
+      "/next.svg",
+      "/tailwind.svg",
+      "/ts.svg",
+      "/three.svg",
+      "/gsap.svg",
+    ],
+    link: "https://t3-twitterclone-indol.vercel.app/",
+  },
+  {
+    id: uuidv4(),
+    title: "LuckyBet",
+    pinTitle: "LuckyBet",
+    des: "Developed a high-performance, scalable web application for an online betting platform, incorporating user authentication, online gambling games and user-friendly interfaces.",
+    img: "/p2.svg",
+    iconLists: [
+      "/next.svg",
+      "/tailwind.svg",
+      "/ts.svg",
+      "/three.svg",
+      "/gsap.svg",
+    ],
+    link: "https://luckybet-final.vercel.app/",
+  },
+  {
+    id: uuidv4(),
+    title: "CampFinder",
+    pinTitle: "CampFinder",
+    des: "Constructed a secure full-stack application that empowers users to create campground instances, add descriptors such as location, images, price, and title to their respective campgrounds, and review other user's campgrounds.",
+    img: "/p3.svg",
     iconLists: [
       "/react.svg",
       "/tailwind.svg",
@@ -140,10 +175,11 @@ export const projects = [
     link: "https://campfinderjtw.onrender.com/",
   },
   {
-    id: 2,
+    id: uuidv4(),
     title: "GarmentGrove",
+    pinTitle: "GarmentGrove",
     des: "Architected and developed a full-stack React e-commerce application, providing users with the ability to conveniently browse and shop for products online, add items to their shopping cart, and easily process payments for their selections.",
-    img: "/p2.svg",
+    img: "/p4.svg",
     iconLists: [
       "/next.svg",
       "/tailwind.svg",
@@ -154,10 +190,11 @@ export const projects = [
     link: "https://lambent-babka-6cd623.netlify.app/",
   },
   {
-    id: 3,
+    id: uuidv4(),
     title: "Getricht Resto",
+    pinTitle: "Getricht Resto",
     des: "Developed a fully-responsive SPA for a restaurant, incorporating a featured dish section, a menu section, and a booking section for customers to easily book tables.",
-    img: "/p3.svg",
+    img: "/p1.svg",
     iconLists: [
       "/react.svg",
       "/tailwind.svg",
@@ -166,20 +203,6 @@ export const projects = [
       "/c.svg",
     ],
     link: "https://eloquent-starship-b4cd67.netlify.app/",
-  },
-  {
-    id: 4,
-    title: "EmojiChirp",
-    des: "Built a responsive and user-friendly Twitter clone where users can tweet emojis and hashtags, view their timeline, and interact with other users.",
-    img: "/p4.svg",
-    iconLists: [
-      "/next.svg",
-      "/tailwind.svg",
-      "/ts.svg",
-      "/three.svg",
-      "/gsap.svg",
-    ],
-    link: "https://github.com/adrianhajdin/iphone",
   },
 ];
 
@@ -297,18 +320,18 @@ export const technologies = [
 
 export const socialMedia = [
   {
-    id: 1,
+    id: uuidv4(),
     img: "/git.svg",
     link: "https://github.com/2015jtw",
   },
   {
-    id: 3,
+    id: uuidv4(),
     img: "/link.svg",
     link: "https://www.linkedin.com/in/josh-worden/",
   },
   {
-    id: 2,
-    img: "/twit.svg",
-    link: "https://x.com/Josh92077308",
+    id: uuidv4(),
+    img: "File",
+    link: "/JoshuaWorden_Resume.pdf",
   },
 ];

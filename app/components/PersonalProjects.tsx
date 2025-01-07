@@ -1,21 +1,22 @@
 "use client";
-
-import { FaLocationArrow } from "react-icons/fa6";
+// React/Next
+import Image from "next/image";
 import Link from "next/link";
-import Tech from "./Tech";
-import { projects } from "@/data";
+
+// UI
+import { FaLocationArrow } from "react-icons/fa6";
 import { PinContainer } from "./ui/3d-pin";
+
+// Data
+import { projects } from "@/data";
 
 const PersonalProjects = () => {
   return (
     <div className="py-20" id="projects">
-      <h1 className="heading pb-6">
+      <h2 className="heading pb-6">
         A small selection of{" "}
-        <span className="text-purple">recent projects</span>
-      </h1>
-      <div className="py-4">
-        <Tech />
-      </div>
+        <span className="dark:text-purple text-blue-500">Recent Projects</span>
+      </h2>
       <div className="flex flex-wrap items-center justify-center p-4 gap-16 ">
         {projects.map((item) => (
           <div
@@ -23,21 +24,16 @@ const PersonalProjects = () => {
             key={item.id}
           >
             <PinContainer
-              title="/ui.aceternity.com"
+              title={item.pinTitle}
               href="https://twitter.com/mannupaaji"
             >
-              <Link href={item.link}>
-                <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
-                  <div
-                    className="relative w-full h-full overflow-hidden lg:rounded-3xl"
-                    style={{ backgroundColor: "#13162D" }}
-                  >
-                    <img src="/bg.png" alt="bgimg" />
-                  </div>
-                  <img
+              <Link href={item.link} target="_blank">
+                <div className="relative flex items-center justify-center sm:w-96 w-[80vw] h-[20vh] lg:h-[30vh] mb-10">
+                  <Image
                     src={item.img}
                     alt="cover"
-                    className="z-10 absolute bottom-0"
+                    className="rounded-md object-cover"
+                    layout="fill"
                   />
                 </div>
 
@@ -46,9 +42,8 @@ const PersonalProjects = () => {
                 </h1>
 
                 <p
-                  className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
+                  className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2 dark:text-gray-400 text-black"
                   style={{
-                    color: "#BEC1DD",
                     margin: "1vh 0",
                   }}
                 >
@@ -65,16 +60,22 @@ const PersonalProjects = () => {
                           transform: `translateX(-${5 * index + 2}px)`,
                         }}
                       >
-                        <img src={icon} alt="icon5" className="p-2" />
+                        <Image
+                          src={icon}
+                          alt="icons"
+                          className="p-2"
+                          width={32}
+                          height={32}
+                        />
                       </div>
                     ))}
                   </div>
 
                   <div className="flex justify-center items-center">
-                    <p className="flex lg:text-xl md:text-xs text-sm text-purple">
+                    <p className="flex lg:text-xl md:text-xs text-sm dark:text-purple text-blue-500">
                       Check Live Site
                     </p>
-                    <FaLocationArrow className="ms-3" color="#CBACF9" />
+                    <FaLocationArrow className="ms-3 text-blue-500 dark:text-purple" />
                   </div>
                 </div>
               </Link>

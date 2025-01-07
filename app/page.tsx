@@ -24,6 +24,7 @@ export default function Home() {
         <FreelanceProjects />
         <PersonalProjects />
         <WorkExperience />
+        <Tech />
         <Footer />
       </div>
     </main>
