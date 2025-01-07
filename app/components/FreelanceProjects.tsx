@@ -15,7 +15,7 @@ import { freelanceProjects, projects } from "@/data";
 const FreelanceProjects = () => {
   return (
     <div className="py-20" id="freelance">
-      <h2 className="heading pb-6">
+      <h2 className="heading pb-7">
         From Concept to Code:{" "}
         <span className="dark:text-purple text-blue-500">
           Recent Client Work
