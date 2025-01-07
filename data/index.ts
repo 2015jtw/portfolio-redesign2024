@@ -149,7 +149,7 @@ export const projects = [
     title: "LuckyBet",
     pinTitle: "LuckyBet",
     des: "Developed a high-performance, scalable web application for an online betting platform, incorporating user authentication, online gambling games and user-friendly interfaces.",
-    img: "/p2.svg",
+    img: "/lucky-bet.png",
     iconLists: [
       "/next.svg",
       "/tailwind.svg",
@@ -164,7 +164,7 @@ export const projects = [
     title: "CampFinder",
     pinTitle: "CampFinder",
     des: "Constructed a secure full-stack application that empowers users to create campground instances, add descriptors such as location, images, price, and title to their respective campgrounds, and review other user's campgrounds.",
-    img: "/p3.svg",
+    img: "/campfinder.png",
     iconLists: [
       "/react.svg",
       "/tailwind.svg",
@@ -179,7 +179,7 @@ export const projects = [
     title: "GarmentGrove",
     pinTitle: "GarmentGrove",
     des: "Architected and developed a full-stack React e-commerce application, providing users with the ability to conveniently browse and shop for products online, add items to their shopping cart, and easily process payments for their selections.",
-    img: "/p4.svg",
+    img: "/groove-garment.png",
     iconLists: [
       "/next.svg",
       "/tailwind.svg",
@@ -194,7 +194,7 @@ export const projects = [
     title: "Getricht Resto",
     pinTitle: "Getricht Resto",
     des: "Developed a fully-responsive SPA for a restaurant, incorporating a featured dish section, a menu section, and a booking section for customers to easily book tables.",
-    img: "/p1.svg",
+    img: "/getrict-resto.png",
     iconLists: [
       "/react.svg",
       "/tailwind.svg",
