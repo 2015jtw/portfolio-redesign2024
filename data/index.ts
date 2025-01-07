@@ -134,7 +134,7 @@ export const projects = [
     title: "EmojiChirp",
     pinTitle: "EmojiChirp",
     des: "Built a responsive and user-friendly Twitter clone where users can tweet emojis and hashtags, view their timeline, and interact with other users.",
-    img: "/p1.svg",
+    img: "/twitter-clone.png",
     iconLists: [
       "/next.svg",
       "/tailwind.svg",
