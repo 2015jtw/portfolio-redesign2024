@@ -1,17 +1,21 @@
 "use client";
 
+// React/NextJS
 import { useState } from "react";
+import Image from "next/image";
+
+// UI
 import { IoCopyOutline } from "react-icons/io5";
-
-// Also install this npm i --save-dev @types/react-lottie
 import Lottie from "react-lottie";
-
-import { cn } from "@/lib/utils";
-
 import { BackgroundGradientAnimation } from "./gradientBg";
 import GridGlobe from "./gridGlobe";
-import animationData from "@/data/confetti.json";
 import MagicButton from "./magicButton";
+
+// Data
+import animationData from "@/data/confetti.json";
+
+// Utils
+import { cn } from "@/lib/utils";
 
 export const BentoGrid = ({
   className,
@@ -87,10 +91,12 @@ export const BentoGridItem = ({
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
           {img && (
-            <img
+            <Image
               src={img}
               alt={img}
               className={cn(imgClassName, "object-cover object-center ")}
+              layout="fill"
+              objectFit="cover"
             />
           )}
         </div>
@@ -100,11 +106,12 @@ export const BentoGridItem = ({
           } `}
         >
           {spareImg && (
-            <img
+            <Image
               src={spareImg}
               alt={spareImg}
-              //   width={220}
-              className="object-cover object-center w-full h-full"
+              width={220} // Replace with your desired width
+              height={220} // Replace with your desired height
+              className="object-cover object-center"
             />
           )}
         </div>

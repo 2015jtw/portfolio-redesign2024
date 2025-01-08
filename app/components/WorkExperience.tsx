@@ -1,16 +1,23 @@
 "use client";
 
+// React/NextJS
 import React from "react";
+import Image from "next/image";
+
+// UI
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { motion } from "framer-motion";
+import { SectionWrapper } from "../hoc";
 
+// Data
+import { experiences } from "@/data";
+
+// Styles
 import "react-vertical-timeline-component/style.min.css";
 import { styles } from "../styles";
-import { experiences } from "@/data";
-import { SectionWrapper } from "../hoc";
 import { textVariant } from "../../lib/motion";
 
 export interface Experience {
@@ -36,11 +43,15 @@ const ExperienceCard = ({ experience }: { experience: Experience }) => {
       iconStyle={{ background: experience.iconBg }}
       icon={
         <div className="flex justify-center items-center w-full h-full">
-          <img
-            src={experience.icon}
-            alt={experience.company_name}
-            className="w-[60%] h-[60%] object-contain"
-          />
+          <div className="relative w-[60%] h-[60%]">
+            <Image
+              src={experience.icon}
+              alt={experience.company_name}
+              width={60} // Provide a width value
+              height={60} // Provide a height value
+              className="object-contain"
+            />
+          </div>
         </div>
       }
     >
