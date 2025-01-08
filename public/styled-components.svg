@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 318 214" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!-- Background -->
+  <rect width="318" height="214" fill="#FFFFFF"/>
+
+  <!-- Nail Polish Brush -->
+  <path d="M150 30 L160 10 L180 10 L170 50 Z" fill="#D33682"/>
+
+  <!-- Nail Polish Bottle -->
+  <rect x="140" y="50" width="40" height="80" rx="8" ry="8" fill="#D33682"/>
+
+  <!-- Fingers -->
+  <path d="M100 140 Q120 100 150 100 Q180 100 200 140" fill="#FFD700"/>
+
+  <!-- Polish on Nails -->
+  <path d="M110 130 Q120 110 150 110 Q180 110 190 130 Z" fill="#D33682"/>
+
+  <!-- Styled-components Text Placeholder -->
+  <text x="50%" y="190" text-anchor="middle" font-size="20" font-family="Arial, sans-serif" fill="#333333">
+    styled-components
+  </text>
+</svg>

@@ -1,5 +1,10 @@
 "use client";
+// React/NextJS
 import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+
+// UI
 import {
   motion,
   AnimatePresence,
@@ -7,11 +12,12 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import { HoveredLink, Menu } from "./ui/navbar-menu";
+
+// Data
 import { cn } from "@/lib/utils";
 import { navItems } from "@/data";
 import { ModeToggle } from "./darkMode";
-import Image from "next/image";
-import Link from "next/link";
+
 export const FixedNavbar = () => {
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(true);
@@ -64,7 +70,10 @@ function Navbar({
 
   return (
     <div
-      className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
+      className={cn(
+        "fixed top-10 inset-x-0 max-w-2xl mx-auto z-50 px-2 lg:px-0",
+        className
+      )}
     >
       <Menu setActive={setActive}>
         <Link href="#home">
