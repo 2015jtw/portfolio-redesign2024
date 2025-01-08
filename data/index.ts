@@ -81,7 +81,7 @@ export const freelanceProjects = [
     iconLists: [
       "/nextjs.svg",
       "/ts.svg",
-      "sanity.svg",
+      "/sanity.svg",
       "/tailwind.svg",
       "/shadcn.svg",
     ],
@@ -96,7 +96,7 @@ export const freelanceProjects = [
     iconLists: [
       "/nextjs.svg",
       "/ts.svg",
-      "sanity.svg",
+      "/sanity.svg",
       "/tailwind.svg",
       "/shadcn.svg",
     ],
