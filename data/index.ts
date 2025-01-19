@@ -135,7 +135,13 @@ export const projects = [
     pinTitle: "Podcastr",
     des: "Developed a podcast platform where users can listen to their favorite podcasts, view episode details, and interact with other users.",
     img: "/podcastr.png",
-    iconLists: ["/react.svg", "/nextjs.svg", "/ts.svg", "/scss.svg"],
+    iconLists: [
+      "/nextjs.svg",
+      "/tailwind.svg",
+      "/convex.png",
+      "/openai-white-logomark.png",
+      "/clerk.png",
+    ],
     link: "https://podcast-app-theta.vercel.app/",
   },
   {
@@ -268,13 +274,18 @@ export const technologies = [
     icon: "/technologies/javascript.png",
   },
   {
+    name: "React",
+    icon: "/technologies/reactjs.png",
+  },
+  {
+    name: "NextJS",
+    icon: "/technologies/nextjs.png",
+  },
+  {
     name: "TypeScript",
     icon: "/technologies/typescript.png",
   },
-  {
-    name: "React JS",
-    icon: "/technologies/reactjs.png",
-  },
+
   {
     name: "Redux Toolkit",
     icon: "/technologies/redux.png",
@@ -292,6 +303,10 @@ export const technologies = [
     icon: "/technologies/mongodb.png",
   },
   {
+    name: "PostgreSQL",
+    icon: "/technologies/postgres.png",
+  },
+  {
     name: "Three JS",
     icon: "/technologies/threejs.svg",
   },
@@ -306,6 +321,22 @@ export const technologies = [
   {
     name: "docker",
     icon: "/technologies/docker.png",
+  },
+  {
+    name: "Sanity",
+    icon: "/technologies/sanity.png",
+  },
+  {
+    name: "OpenAI",
+    icon: "/technologies/openai-logomark.png",
+  },
+  {
+    name: "ShadCN",
+    icon: "/technologies/shadcn.png",
+  },
+  {
+    name: "Clerk",
+    icon: "/technologies/clerk-logo-black.png",
   },
 ];
 
