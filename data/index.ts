@@ -131,6 +131,15 @@ export const freelanceProjects = [
 export const projects = [
   {
     id: uuidv4(),
+    title: "Podcastr",
+    pinTitle: "Podcastr",
+    des: "Developed a podcast platform where users can listen to their favorite podcasts, view episode details, and interact with other users.",
+    img: "/podcastr.png",
+    iconLists: ["/react.svg", "/nextjs.svg", "/ts.svg", "/scss.svg"],
+    link: "https://podcast-app-theta.vercel.app/",
+  },
+  {
+    id: uuidv4(),
     title: "EmojiChirp",
     pinTitle: "EmojiChirp",
     des: "Built a responsive and user-friendly Twitter clone where users can tweet emojis and hashtags, view their timeline, and interact with other users.",

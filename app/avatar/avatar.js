@@ -27,7 +27,10 @@ const Avatar = () => {
       renderer.shadowMap.type = THREE.PCFSoftShadowMap;
       container.appendChild(renderer.domElement);
 
-      camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight);
+      camera = new THREE.PerspectiveCamera(
+        45,
+        container.clientWidth / container.clientHeight
+      );
       camera.position.set(0.2, 0.5, 1);
 
       controls = new OrbitControls(camera, renderer.domElement);
@@ -73,10 +76,10 @@ const Avatar = () => {
 
       mixer = new THREE.AnimationMixer(avatar);
       const clips = gltf.animations;
-      const waveClip = THREE.AnimationClip.findByName(clips, 'Final-Waving');
+      const waveClip = THREE.AnimationClip.findByName(clips, "Final-Waving");
       const waveAction = mixer.clipAction(waveClip);
 
-      window.addEventListener('resize', () => {
+      window.addEventListener("resize", () => {
         camera.aspect = container.clientWidth / container.clientHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(container.clientWidth, container.clientHeight);
@@ -93,12 +96,12 @@ const Avatar = () => {
     };
 
     loader.load(
-      '/Josh-Avatar.glb',
+      "/Josh-Avatar.glb",
       (gltf) => {
         setupScene(gltf);
         if (loadingRef.current) {
-          loadingRef.current.style.display = 'none';
-          console.log('Loading complete');
+          loadingRef.current.style.display = "none";
+          console.log("Loading complete");
         }
       },
       (xhr) => {
@@ -109,21 +112,20 @@ const Avatar = () => {
         console.log(`Loading model... ${percentCompletion}%`);
       },
       (error) => {
-        console.error('Error loading model:', error);
+        console.error("Error loading model:", error);
       }
     );
 
     // Apply styles based on device width
     const applyStyles = () => {
       if (container) {
-        container.style.touchAction = isMobile ? 'none' : 'auto';
-        container.style.pointerEvents = isMobile ? 'none' : 'auto';
-        
+        container.style.touchAction = isMobile ? "none" : "auto";
+        container.style.pointerEvents = isMobile ? "none" : "auto";
       }
     };
 
     applyStyles(); // Apply styles initially
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
       // Update the isMobile flag and reapply styles on resize
       isMobile = window.innerWidth <= 768;
       applyStyles();
@@ -148,7 +150,7 @@ const Avatar = () => {
       if (mixer) {
         mixer.stopAllAction();
       }
-      window.removeEventListener('resize', applyStyles); // Clean up resize listener
+      window.removeEventListener("resize", applyStyles); // Clean up resize listener
     };
   }, [isMobile]); // Dependency array to re-run effect on device width change
 
@@ -158,7 +160,7 @@ const Avatar = () => {
       ref={containerRef} // Attach ref to container
       className="flex justify-center items-center order-1 lg:max-w-[50vw] w-full h-full min-h-[600px] cursor-none lg:cursor-pointer"
     >
-      <div id="avatar-loading" ref={loadingRef} >
+      <div id="avatar-loading" ref={loadingRef}>
         LOADING...
       </div>
     </div>
