@@ -63,17 +63,13 @@ const Footer = () => {
               href={item.link}
               target="_blank"
             >
-              {item.img === "File" ? (
-                <File className="group-hover:text-blue-500 transition-colors duration-200" />
-              ) : (
-                <Image
-                  src={item.img ?? "/logo.svg"}
-                  alt={`${item.id}`}
-                  width={20}
-                  height={20}
-                  className="group-hover:brightness-0 group-hover:text-blue-500 group-hover:[filter:invert(48%)_sepia(79%)_saturate(2476%)_hue-rotate(190deg)_brightness(118%)_contrast(119%)]"
-                />
-              )}
+              <Image
+                src={item.img ?? "/logo.svg"}
+                alt={`${item.id}`}
+                width={20}
+                height={20}
+                className="group-hover:brightness-0 group-hover:text-blue-500 group-hover:[filter:invert(48%)_sepia(79%)_saturate(2476%)_hue-rotate(190deg)_brightness(118%)_contrast(119%)]"
+              />
             </Link>
           ))}
         </div>

@@ -83,7 +83,7 @@ const ExperienceCard = ({ experience }: { experience: Experience }) => {
 
 const WorkExperience = () => {
   return (
-    <div className="py-10" id="work-experience">
+    <div className="py-10" id="resume">
       <motion.div variants={textVariant()}>
         <p
           className={`${styles.sectionSubText} text-center text-black dark:text-white`}

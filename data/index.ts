@@ -2,14 +2,14 @@ import { v4 as uuidv4 } from "uuid";
 
 export const navItems = [
   { name: "Freelance", link: "#freelance" },
-  { name: "Work", link: "#work-experience" },
+  { name: "Resume", link: "#resume" },
   { name: "Projects", link: "#projects" },
   { name: "Contact", link: "#contact" },
 ];
 
 export const gridItems = [
   {
-    id: 1,
+    id: uuidv4(),
     title: "I prioritize client collaboration, fostering open communication ",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
@@ -19,7 +19,7 @@ export const gridItems = [
     spareImg: "",
   },
   {
-    id: 2,
+    id: uuidv4(),
     title: "I'm very flexible with time zone communications",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
@@ -29,7 +29,7 @@ export const gridItems = [
     spareImg: "",
   },
   {
-    id: 3,
+    id: uuidv4(),
     title: "My tech stack",
     description: "I constantly try to improve",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
@@ -39,7 +39,7 @@ export const gridItems = [
     spareImg: "",
   },
   {
-    id: 4,
+    id: uuidv4(),
     title: "Tech enthusiast with a passion for development.",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
@@ -50,7 +50,7 @@ export const gridItems = [
   },
 
   {
-    id: 5,
+    id: uuidv4(),
     title: "Currently learning the T3 Stack",
     description: "The Inside Scoop",
     className: "md:col-span-3 md:row-span-2",
@@ -60,7 +60,7 @@ export const gridItems = [
     spareImg: "/grid.svg",
   },
   {
-    id: 6,
+    id: uuidv4(),
     title: "Do you want to start a project together?",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
@@ -205,57 +205,60 @@ export const projects = [
 
 export const experiences = [
   {
-    id: 1,
-    title: "Web Developer",
-    company_name: "Arctic Leaf Inc.",
-    icon: "/work-experience/arcticleaf-final.png",
-    iconBg: "#E6DEDD",
-    date: "July 2023 - August 2024",
-    points: [
-      "Developed E-Commerce websites for a number of the company’s clients.",
-      "Developed reusable, customizable widgets for Shopify and BigCommerce.",
-      "Contributed to the development and improvement of the proprietary BigCommerce theme.",
-      "Collaborated with a team of UX/UI designers, account managers, and QA technicians to build sites.",
-    ],
-  },
-  {
-    id: 2,
+    id: uuidv4(),
     title: "Freelance Web Developer",
     company_name: "Self Employed",
     icon: "/work-experience/upwork-final.png",
     iconBg: "#65A30D",
     date: "January 2022 - Present",
     points: [
-      "Central Asia Tours GmBH - Designed, developed and deployed a lightweight and visually appealing website to showcase travel packages and itineraries, ensuring an intuitive user experience.",
+      "Food Network - Developed a lead-generating website using Next.js, Sanity.io, and Tailwind CSS with an integrated chatbot to connect qualified food tech startups with investors while offering pitch deck development and investment readiness services.",
+      "Goodman & Robb - Built a responsive website for a grant writing and ESG consultancy using Next.js, Tailwind CSS, and Sanity. Optimized for SEO and incorporated branded design elements to showcase their services and expertise.",
+      "Thompson LLC - Developed a high-performance website using Next.js, Tailwind CSS & Sanity to highlight the firm's expertise in sustainable development, economic growth, and international advisory services.",
       "Resilient LLC - Developed a headless WordPress website using NextJS for a consultancy group specializing in crisis managment and business continuity.",
+      "Central Asia Tours GmBH - Designed, developed and deployed a lightweight and visually appealing website to showcase travel packages and itineraries, ensuring an intuitive user experience.",
       "LuckyBet - Developed a high-performance, scalable web application for an online betting platform, incorporating user authentication, online gambling games and user-friendly interfaces.",
     ],
   },
   {
-    id: 3,
+    id: uuidv4(),
+    title: "Web Developer",
+    company_name: "Arctic Leaf Inc.",
+    icon: "/work-experience/arcticleaf-final.png",
+    iconBg: "#E6DEDD",
+    date: "July 2023 - August 2024",
+    points: [
+      "Developed e-Commerce websites for clients like Method Products, Lekker Home, LFGO Energy, Ecover, Fastool Now and InkBridge Networks using BigCommerce, Shopify and NextJS.",
+      "Built custom full-stack applications, integrated third-party APIs, and optimized performance for fast loading times.",
+      "Created reusable, customizable widgets for Shopify and BigCommerce, updating them based on client requirements and providing user guides.",
+      "Contributed to the company's proprietary BigCommerce theme, adding new features based on industry trends.",
+      "Collaborated with UX/UI designers, account managers, and QA technicians to translate design concepts into high-performing websites, meeting deadlines and ensuring quality through rigorous testing.",
+    ],
+  },
+  {
+    id: uuidv4(),
     title: "Full Stack Developer",
     company_name: "Maket",
     icon: "/work-experience/maket_ai_logo.jpeg",
     iconBg: "#000",
     date: "May 2022 - November 2022",
     points: [
-      "Collaborated with the CTO to strategize the development roadmap for the web-platform for an AI company specialized in generative AI systems for building architecture design.",
       "Cooperated with a team of 3 developers to execute the product features for the web-platform using React, MongoDB, AWS Cloud, Node.js, and Vercel.",
       "Efficiently deployed the web-platform to +10,000 users, producing $5,000/month in revenue.",
     ],
   },
   {
-    id: 4,
+    id: uuidv4(),
     title: "Digital Marketing Manager",
     company_name: "BUTR Inc.",
     icon: "/work-experience/ampme-final.png",
     iconBg: "#22D3EE",
     date: "Jan 2023 - Present",
     points: [
-      "Supervised a team of Business Developers and led efforts to gather ad creatives from social media influencers for our clients.",
-      "Developed and executed a data-driven digital marketing strategy through paid ads channels for our clients, utilizing over $2,200,000 to attain a CPI of $0.75 and CPFT of $16.",
-      "Contributed to the development of an in-house CRM system. Collaborated with product manager and developers to design and implement new features.",
-      "Analyzed campaign performance and presented findings to senior management.",
+      "Led Business Development team in managing influencer ad creative collection for clients.",
+      "Executed $2.2M+ paid ad campaigns achieving $0.75 CPI and $16 CPFT.",
+      "Partnered with product and dev teams to build and enhance in-house CRM system features.",
+      "Drove campaign optimization through performance analysis and strategic recommendations to leadership.",
     ],
   },
 ];
@@ -263,17 +266,12 @@ export const experiences = [
 export const socialMedia = [
   {
     id: uuidv4(),
-    img: "/git.svg",
-    link: "https://github.com/2015jtw",
-  },
-  {
-    id: uuidv4(),
     img: "/link.svg",
     link: "https://www.linkedin.com/in/josh-worden/",
   },
   {
     id: uuidv4(),
-    img: "File",
-    link: "/JoshuaWorden_Resume.pdf",
+    img: "/git.svg",
+    link: "https://github.com/2015jtw",
   },
 ];
