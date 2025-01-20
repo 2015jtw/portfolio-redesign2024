@@ -21,13 +21,13 @@ const Hero = () => {
         <Spotlight className="top-28 left-80 h-[80vh] w-[50vw]" fill="blue" />
       </div>
       <GridBackgroundDemo className="absolute top-0 left-0" />
-      <div className="flex flex-col justify-around relative my-10 z-10 h-screen pt-48 md:pt-36">
-        <div className="max-w-[89vw] md:max-w-2xl w-full lg:max-w-[50vw] flex flex-col items-center justify-center order-2 mx-auto pt-4 md:pt-0">
+      <div className="flex flex-col justify-center relative my-10 z-10 h-screen">
+        <div className="max-w-[89vw] md:max-w-2xl w-full lg:max-w-[50vw] flex flex-col items-center justify-center order-2 mx-auto pt-4 md:pt-0 space-y-6">
           <h2 className="heading text-black dark:text-white">Hi there 👋</h2>
 
           <TextGenerateEffect
             className="text-center text-[40px] md:text-6xl py-2"
-            words="I'm Josh Worden"
+            words="I am Joshua Worden"
           />
 
           <p className="text-center text-black dark:text-white font-normal">
