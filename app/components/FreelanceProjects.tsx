@@ -6,7 +6,6 @@ import Image from "next/image";
 
 // UI
 import { FaLocationArrow } from "react-icons/fa6";
-import Tech from "./Tech";
 import { PinContainer } from "./ui/3d-pin";
 
 // Data

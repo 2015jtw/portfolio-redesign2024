@@ -30,9 +30,9 @@ export function ModeToggle() {
       className="border-none"
     >
       {resolvedTheme === "dark" ? (
-        <Sun className="h-[1.2rem] w-[1.2rem] cursor-pointer" />
-      ) : (
         <Moon className="h-[1.2rem] w-[1.2rem] cursor-pointer" />
+      ) : (
+        <Sun className="h-[1.2rem] w-[1.2rem] cursor-pointer" />
       )}
       <span className="sr-only">Toggle theme</span>
     </Button>
