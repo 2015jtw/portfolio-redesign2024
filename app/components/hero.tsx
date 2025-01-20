@@ -31,10 +31,11 @@ const Hero = () => {
           />
 
           <p className="text-center text-black dark:text-white font-normal">
-            I am a web developer with a passion for creating interactive,
-            performant and accessible user interfaces. Proven experience with
-            the NextJS core technologies, as well as Shopify and BigCommerce
-            platforms.
+            I am a web developer who specializes in building high-performance,
+            SEO-optimized user interfaces that combine exceptional functionality
+            with compelling design. With extensive experience in Next.js
+            ecosystem, I have delivered successful projects on major e-commerce
+            platforms including Shopify and BigCommerce.
           </p>
           <a href="#freelance" className="py-4 md:py-0">
             <MagicButton
