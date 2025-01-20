@@ -2,8 +2,8 @@ import { v4 as uuidv4 } from "uuid";
 
 export const navItems = [
   { name: "Freelance", link: "#freelance" },
-  { name: "Projects", link: "#projects" },
   { name: "Work", link: "#work-experience" },
+  { name: "Projects", link: "#projects" },
   { name: "Contact", link: "#contact" },
 ];
 
@@ -257,86 +257,6 @@ export const experiences = [
       "Contributed to the development of an in-house CRM system. Collaborated with product manager and developers to design and implement new features.",
       "Analyzed campaign performance and presented findings to senior management.",
     ],
-  },
-];
-
-export const technologies = [
-  {
-    name: "HTML 5",
-    icon: "/technologies/html.png",
-  },
-  {
-    name: "CSS 3",
-    icon: "/technologies/css.png",
-  },
-  {
-    name: "JavaScript",
-    icon: "/technologies/javascript.png",
-  },
-  {
-    name: "React",
-    icon: "/technologies/reactjs.png",
-  },
-  {
-    name: "NextJS",
-    icon: "/technologies/nextjs.png",
-  },
-  {
-    name: "TypeScript",
-    icon: "/technologies/typescript.png",
-  },
-
-  {
-    name: "Redux Toolkit",
-    icon: "/technologies/redux.png",
-  },
-  {
-    name: "Tailwind CSS",
-    icon: "/technologies/tailwind.png",
-  },
-  {
-    name: "Node JS",
-    icon: "/technologies/nodejs.png",
-  },
-  {
-    name: "MongoDB",
-    icon: "/technologies/mongodb.png",
-  },
-  {
-    name: "PostgreSQL",
-    icon: "/technologies/postgres.png",
-  },
-  {
-    name: "Three JS",
-    icon: "/technologies/threejs.svg",
-  },
-  {
-    name: "git",
-    icon: "/technologies/git.png",
-  },
-  {
-    name: "figma",
-    icon: "/technologies/figma.png",
-  },
-  {
-    name: "docker",
-    icon: "/technologies/docker.png",
-  },
-  {
-    name: "Sanity",
-    icon: "/technologies/sanity.png",
-  },
-  {
-    name: "OpenAI",
-    icon: "/technologies/openai-logomark.png",
-  },
-  {
-    name: "ShadCN",
-    icon: "/technologies/shadcn.png",
-  },
-  {
-    name: "Clerk",
-    icon: "/technologies/clerk-logo-black.png",
   },
 ];
 

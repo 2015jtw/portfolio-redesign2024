@@ -4,7 +4,6 @@ import { GridBackgroundDemo } from "./ui/gridBackground";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import MagicButton from "./ui/magicButton";
 import { FaLocationArrow } from "react-icons/fa";
-import Avatar from "../avatar/avatar";
 
 const Hero = () => {
   return (
@@ -22,7 +21,7 @@ const Hero = () => {
         <Spotlight className="top-28 left-80 h-[80vh] w-[50vw]" fill="blue" />
       </div>
       <GridBackgroundDemo className="absolute top-0 left-0" />
-      <div className="flex flex-col lg:flex-row justify-around relative my-10 z-10 w-full h-full min-h-[600px] pt-48 md:pt-36">
+      <div className="flex flex-col justify-around relative my-10 z-10 h-screen pt-48 md:pt-36">
         <div className="max-w-[89vw] md:max-w-2xl w-full lg:max-w-[50vw] flex flex-col items-center justify-center order-2 mx-auto pt-4 md:pt-0">
           <h2 className="heading text-black dark:text-white">Hi there 👋</h2>
 
@@ -37,7 +36,7 @@ const Hero = () => {
             the NextJS core technologies, as well as Shopify and BigCommerce
             platforms.
           </p>
-          <a href="#work-experience" className="py-4 md:py-0">
+          <a href="#freelance" className="py-4 md:py-0">
             <MagicButton
               title="Show my Work"
               icon={<FaLocationArrow />}
@@ -46,7 +45,6 @@ const Hero = () => {
             />
           </a>
         </div>
-        <Avatar />
       </div>
     </div>
   );

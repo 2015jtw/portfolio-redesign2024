@@ -6,11 +6,8 @@ import Hero from "./components/hero";
 import { FixedNavbar } from "./components/FixedNavbar";
 import Footer from "./components/Footer";
 import WorkExperience from "./components/WorkExperience";
-import Tech from "./components/Tech";
 import PersonalProjects from "./components/PersonalProjects";
-import { FaHome } from "react-icons/fa";
 import Grid from "./components/grid";
-import { navItems } from "@/data";
 import Approach from "./components/Approach";
 import FreelanceProjects from "./components/FreelanceProjects";
 
@@ -22,9 +19,8 @@ export default function Home() {
         <Hero />
         <Grid />
         <FreelanceProjects />
-        <PersonalProjects />
         <WorkExperience />
-        <Tech />
+        <PersonalProjects />
         <Footer />
       </div>
     </main>
