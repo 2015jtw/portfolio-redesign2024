@@ -1,5 +1,10 @@
 import { getAboutData } from '@/sanity/lib/data'
-import AboutSection from '@/app/components/AboutSection'
+import dynamic from 'next/dynamic'
+
+// Lazy load heavy component
+const AboutSection = dynamic(() => import('@/app/components/AboutSection'), {
+  loading: () => <div className="py-20"><div className="animate-pulse bg-gray-200 dark:bg-gray-700 h-96 rounded-md"></div></div>
+})
 
 export default async function AboutPage() {
   const aboutData = await getAboutData()

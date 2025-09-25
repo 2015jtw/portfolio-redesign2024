@@ -88,9 +88,8 @@
   }
 }
 
-
 .vertical-timeline::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 18px;
@@ -107,19 +106,25 @@
 }
 
 .vertical-timeline-element-icon {
-  box-shadow: 0 0 0 4px #000,inset 0 2px 0 rgba(0,0,0,.08),0 3px 0 4px rgba(0,0,0,.05) !important;
+  box-shadow:
+    0 0 0 4px #000,
+    inset 0 2px 0 rgba(0, 0, 0, 0.08),
+    0 3px 0 4px rgba(0, 0, 0, 0.05) !important;
 }
 
 .dark .vertical-timeline-element-icon {
-  box-shadow: 0 0 0 4px #fff,inset 0 2px 0 rgba(0,0,0,.08),0 3px 0 4px rgba(0,0,0,.05) !important;
+  box-shadow:
+    0 0 0 4px #fff,
+    inset 0 2px 0 rgba(0, 0, 0, 0.08),
+    0 3px 0 4px rgba(0, 0, 0, 0.05) !important;
 }
 
 .vertical-timeline-element-content {
-  box-shadow:   0 3px 0 #000 !important;
+  box-shadow: 0 3px 0 #000 !important;
 }
 
 .dark .vertical-timeline-element-content {
-  box-shadow:   0 3px 0 #BEC1DD !important;
+  box-shadow: 0 3px 0 #bec1dd !important;
 }
 
 .vertical-timeline-element-date {
@@ -132,11 +137,10 @@
 }
 
 .vertical-timeline-element-content {
-  background-color: #C1C2D3 !important;
+  background-color: #c1c2d3 !important;
   color: black !important;
   border: 1px solid black !important;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2) !important; /* More pronounced box shadow */
-
 }
 
 .dark .vertical-timeline-element-content {
@@ -147,6 +151,19 @@
 }
 
 .filter-light-mode {
-  filter: invert(0) sepia(0) saturate(0) hue-rotate(0deg) brightness(0) contrast(1);
+  filter: invert(0) sepia(0) saturate(0) hue-rotate(0deg) brightness(0)
+    contrast(1);
 }
 
+/* Prevent browser extensions from causing hydration issues */
+form[data-dashlane-rid] {
+  /* Allow extensions to modify forms without hydration warnings */
+}
+
+/* Ensure form elements are stable during hydration */
+input,
+textarea,
+button {
+  /* Prevent layout shifts from extensions */
+  contain: layout style;
+}

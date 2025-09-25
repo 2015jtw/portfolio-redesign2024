@@ -6,11 +6,18 @@ import Navbar from "./components/navbar";
 import Footer from "./components/Footer";
 import { getHeroData } from '@/sanity/lib/data';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: 'swap',
+  preload: true
+});
+
 const alegreya = Alegreya({
   weight: ["400", "600"],
   subsets: ["latin"],
   variable: "--font-alegreya",
+  display: 'swap',
+  preload: true
 });
 
 export const metadata: Metadata = {

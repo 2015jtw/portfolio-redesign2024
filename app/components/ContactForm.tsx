@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
@@ -35,6 +35,11 @@ type FormData = z.infer<typeof formSchema>
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -77,6 +82,23 @@ export default function ContactForm() {
     }
   }
 
+  if (!isMounted) {
+    return (
+      <section id="contact" className="pt-0 pb-10">
+        <div className="container mx-auto px-4">
+          <h2 className="heading text-center mb-12 lg:max-w-[45vw] mx-auto">
+            Ready to take{" "}
+            <span className="text-blue-500 dark:text-purple">your project</span>{" "}
+            to the next level?
+          </h2>
+          <div className="max-w-2xl mx-auto">
+            <div className="animate-pulse bg-gray-200 dark:bg-gray-700 h-96 rounded-md"></div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   return (
     <section id="contact" className="pt-0 pb-10">
       <div className="container mx-auto px-4">
@@ -100,7 +122,7 @@ export default function ContactForm() {
           )}
 
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" suppressHydrationWarning>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <FormField
                   control={form.control}
