@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Moon, Sun, Menu, X } from 'lucide-react'
 import { useTheme } from 'next-themes'
@@ -42,9 +43,12 @@ export default function Navbar({ socialMedia, resume }: NavbarProps) {
           {/* Left: Logo */}
           <Link href="/" className="group relative inline-flex items-center gap-2">
             <div className="relative w-14 h-14">
-              <img 
+              <Image 
                 src="/hipster-logo.svg" 
                 alt="JTW Logo" 
+                width={56}
+                height={56}
+                priority
                 className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
               />
             </div>

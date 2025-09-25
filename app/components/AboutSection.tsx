@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { urlForOptimized } from '@/sanity/lib/image'
 import type { AboutQueryResult } from '@/sanity/lib/types'
 
 interface AboutSectionProps {
@@ -72,10 +73,11 @@ export default function AboutSection({ data }: AboutSectionProps) {
                 <div key={index} className="relative group">
                   <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
                     <Image
-                      src={photo.image.asset.url}
+                      src={urlForOptimized(photo.image, { width: 400, height: 400, quality: 85 }).url()}
                       alt={photo.image.alt || `Photo ${index + 1}`}
-                      width={photo.image.asset.metadata.dimensions.width}
-                      height={photo.image.asset.metadata.dimensions.height}
+                      width={400}
+                      height={400}
+                      priority={index < 3}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
