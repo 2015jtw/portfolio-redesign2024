@@ -28,7 +28,7 @@ Agree on Design System: Collaborate with clients to establish a cohesive design 
           title="Development"
           description="Build the Website: Develop a robust and responsive website using best practices and modern technologies.
 Quality Assurance: Conduct thorough testing to ensure the website functions seamlessly across all devices and browsers.
-Deploy the Website: Launch the website, ensuring a smooth transition from development to live production.
+Deploy the Website: Launch the website, ensuring a smooth transition from development to live production!
 "
           icon={<AceternityIcon order="Phase 2" />}
         >
