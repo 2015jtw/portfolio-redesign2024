@@ -25,8 +25,8 @@ export function SocialIcons({
         <a 
           key={`${item.service}-${index}`}
           href={item.url} 
-          target={item.external ? "_blank" : "_self"}
-          rel={item.external ? "noopener noreferrer" : undefined}
+          target="_blank"
+          rel="noopener noreferrer"
           aria-label={`Visit ${item.service} profile`}
           className="hover:opacity-80 transition-opacity duration-200"
         >

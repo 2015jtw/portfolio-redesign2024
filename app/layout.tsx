@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "./components/theme-provider";
 import Navbar from "./components/navbar";
 import Footer from "./components/Footer";
+import { getHeroData } from '@/sanity/lib/data';
 
 const inter = Inter({ subsets: ["latin"] });
 const alegreya = Alegreya({
@@ -17,11 +18,15 @@ export const metadata: Metadata = {
   description: "Designed and developed this NextJS app for my portfolio",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const heroData = await getHeroData();
+  const socialMedia = heroData?.socialMedia || [];
+  const resume = heroData?.resume;
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${alegreya.variable} min-h-screen bg-background text-foreground antialiased`}>
@@ -31,9 +36,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
+          <Navbar socialMedia={socialMedia} resume={resume} />
           <main>{children}</main>
-          <Footer />
+          <Footer socialMedia={socialMedia} />
         </ThemeProvider>
       </body>
     </html>

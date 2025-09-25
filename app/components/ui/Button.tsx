@@ -8,6 +8,8 @@ interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
   className?: string;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -16,6 +18,8 @@ const Button: React.FC<ButtonProps> = ({
   children,
   onClick,
   className,
+  type = "button",
+  disabled = false,
 }) => {
   const buttonClasses = classNames(
     "flex items-center justify-center rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2",
@@ -34,7 +38,12 @@ const Button: React.FC<ButtonProps> = ({
   );
 
   return (
-    <button className={buttonClasses} onClick={onClick}>
+    <button 
+      type={type}
+      disabled={disabled}
+      className={buttonClasses} 
+      onClick={onClick}
+    >
       {children}
     </button>
   );

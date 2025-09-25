@@ -3,8 +3,7 @@ import { Spotlight } from "./ui/Spotlight";
 import { GridBackgroundDemo } from "./ui/gridBackground";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import MagicButton from "./ui/magicButton";
-import { FaLocationArrow, FaFilePdf } from "react-icons/fa";
-import { SocialIcons } from "./ui/SocialIcons";
+import { FaLocationArrow } from "react-icons/fa";
 import type { HeroQueryResult } from "@/sanity/lib/types";
 
 interface HeroProps {
@@ -33,8 +32,8 @@ const Hero = ({ data }: HeroProps) => {
         <Spotlight className="top-28 left-80 h-[80vh] w-[50vw]" fill="blue" />
       </div>
       <GridBackgroundDemo className="absolute top-0 left-0" />
-      <div className="flex flex-col justify-center relative my-10 z-10 h-screen">
-        <div className="max-w-[89vw] md:max-w-2xl w-full lg:max-w-[50vw] flex flex-col items-center justify-center order-2 mx-auto pt-4 md:pt-0 space-y-6">
+      <div className="flex flex-col justify-center relative z-10 h-screen">
+        <div className="max-w-[89vw] md:max-w-3xl w-full lg:max-w-[50vw] flex flex-col items-center justify-center order-2 mx-auto pt-4 md:pt-0 space-y-6">
           <h2 className="heading text-black dark:text-white">{greeting}</h2>
 
           <TextGenerateEffect
@@ -65,17 +64,6 @@ const Hero = ({ data }: HeroProps) => {
             </div>
           )}
           
-          {/* Social Media Icons and Resume in a Row */}
-          <div className="flex justify-center items-center gap-6 mt-6">
-            {socialMedia && socialMedia.length > 0 && (
-              <SocialIcons 
-                items={socialMedia}
-                className="social-icons"
-                iconSize={24}
-              />
-            )}
-            
-          </div>
         </div>
       </div>
     </div>
