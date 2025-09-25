@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { Spotlight } from "./ui/Spotlight";
 import { GridBackgroundDemo } from "./ui/gridBackground";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
@@ -48,10 +49,8 @@ const Hero = ({ data }: HeroProps) => {
           {/* Centered Show Work Button */}
           {ctaButton && (
             <div className="flex justify-center">
-              <a 
-                href={ctaButton.url}
-                target={ctaButton.external ? '_blank' : '_self'}
-                rel={ctaButton.external ? 'noopener noreferrer' : undefined}
+              <Link 
+                href="/work"
                 className="py-4 md:py-0"
               >
                 <MagicButton
@@ -60,7 +59,7 @@ const Hero = ({ data }: HeroProps) => {
                   position="right"
                   otherClasses="gap-2 bg-blue-500 font-semibold"
                 />
-              </a>
+              </Link>
             </div>
           )}
           
