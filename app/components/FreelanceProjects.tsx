@@ -7,6 +7,7 @@ import Image from "next/image";
 // UI
 import { FaLocationArrow } from "react-icons/fa6";
 import { PinContainer } from "./ui/3d-pin";
+import { IconRow } from "./ui/BrandIcon";
 
 // Data
 import { getClientWorkData } from "@/sanity/lib/data";
@@ -17,6 +18,7 @@ interface FreelanceProjectsProps {
 }
 
 const FreelanceProjects = ({ data }: FreelanceProjectsProps) => {
+
   if (!data || data.length === 0) {
     return (
       <div className="py-20" id="freelance">
@@ -39,18 +41,18 @@ const FreelanceProjects = ({ data }: FreelanceProjectsProps) => {
           Recent Client Work
         </span>
       </h2>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-16 ">
+      <div className="flex flex-wrap items-center justify-center p-4 gap-20 ">
         {data.map((item) => (
           <div
-            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
+            className="lg:min-h-[40rem] h-[25rem] flex items-center justify-center sm:w-[28rem] w-[80vw]"
             key={item._id}
           >
             <PinContainer
               title={item.pinTitle}
-              href="https://twitter.com/mannupaaji"
+              href={item.link}
             >
               <Link href={item.link} target="_blank">
-                <div className="relative flex items-center justify-center sm:w-96 w-[80vw] h-[20vh] lg:h-[30vh] mb-10">
+                <div className="relative flex items-center justify-center sm:w-[28rem] w-[80vw] h-[20vh] lg:h-[35vh] mb-10">
                   <Image
                     src={item.img.asset.url}
                     alt="cover"
@@ -74,23 +76,11 @@ const FreelanceProjects = ({ data }: FreelanceProjectsProps) => {
 
                 <div className="flex items-center justify-between mt-7 mb-3">
                   <div className="flex items-center">
-                    {item.iconSlugs.map((icon, index) => (
-                      <div
-                        key={index}
-                        className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-                        style={{
-                          transform: `translateX(-${5 * index + 2}px)`,
-                        }}
-                      >
-                        <Image
-                          src={`/technologies/${icon.iconSlug}.png`}
-                          alt="icons"
-                          className="p-2"
-                          width={32}
-                          height={32}
-                        />
-                      </div>
-                    ))}
+                    <IconRow 
+                      slugs={item.iconSlugs.map(tech => tech.iconSlug)}
+                      size={32}
+                      className="flex gap-2"
+                    />
                   </div>
 
                   <div className="flex justify-center items-center">

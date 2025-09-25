@@ -65,6 +65,8 @@ export default function ContactForm() {
         setSubmitStatus('success')
         form.reset()
       } else {
+        const errorData = await response.json().catch(() => ({}))
+        console.error('Contact form error:', errorData)
         setSubmitStatus('error')
       }
     } catch (error) {
@@ -76,7 +78,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="pt-0 pb-10">
       <div className="container mx-auto px-4">
         <h2 className="heading text-center mb-12 lg:max-w-[45vw] mx-auto">
           Ready to take{" "}

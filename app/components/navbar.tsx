@@ -41,7 +41,7 @@ export default function Navbar({ socialMedia, resume }: NavbarProps) {
         <div className="flex items-center gap-6">
           {/* Left: Logo */}
           <Link href="/" className="group relative inline-flex items-center gap-2">
-            <div className="relative w-10 h-10">
+            <div className="relative w-14 h-14">
               <img 
                 src="/hipster-logo.svg" 
                 alt="JTW Logo" 
@@ -51,7 +51,7 @@ export default function Navbar({ socialMedia, resume }: NavbarProps) {
           </Link>
 
           {/* Center: underline nav */}
-          <ul className="hidden items-center gap-8 md:flex">
+          <ul className="hidden items-center gap-6 lg:gap-8 lg:flex">
           {links.slice(1).map(({ href, label }) => {
             const active = pathname === href || (href !== '/' && pathname.startsWith(href))
             return (
@@ -99,8 +99,22 @@ export default function Navbar({ socialMedia, resume }: NavbarProps) {
 
         {/* Right: actions */}
         <div className="flex items-center gap-4">
+          {/* Tablet: Just theme toggle */}
+          <button
+            type="button"
+            onClick={() => setTheme((resolvedTheme ?? theme) === 'dark' ? 'light' : 'dark')}
+            className="hidden md:inline-flex lg:hidden h-12 w-12 items-center justify-center rounded-lg border text-foreground transition-colors hover:bg-accent"
+            aria-label="Toggle theme"
+          >
+            {mounted && (resolvedTheme ?? theme) === 'dark' ? (
+              <Sun className="h-5 w-5" />
+            ) : (
+              <Moon className="h-5 w-5" />
+            )}
+          </button>
+
           {/* Desktop: Social Icons, Contact Button and Theme toggle */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4">
             {/* Social Media Icons */}
             {socialMedia && socialMedia.length > 0 && (
               <SocialIcons 
@@ -110,18 +124,14 @@ export default function Navbar({ socialMedia, resume }: NavbarProps) {
               />
             )}
             
-            <Button
-              variant="solid"
-              size="medium"
-              onClick={() => {
-                const contactSection = document.getElementById('contact');
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-            >
-              Get in Touch
-            </Button>
+            <Link href="/#contact">
+              <Button
+                variant="solid"
+                size="medium"
+              >
+                Get in Touch
+              </Button>
+            </Link>
 
             <button
               type="button"
@@ -141,7 +151,7 @@ export default function Navbar({ socialMedia, resume }: NavbarProps) {
           <button
             type="button"
             onClick={toggleMobileMenu}
-            className="md:hidden inline-flex h-12 w-12 items-center justify-center rounded-lg border text-foreground transition-colors hover:bg-accent"
+            className="lg:hidden inline-flex h-12 w-12 items-center justify-center rounded-lg border text-foreground transition-colors hover:bg-accent"
             aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? (
@@ -155,7 +165,7 @@ export default function Navbar({ socialMedia, resume }: NavbarProps) {
 
       {/* Mobile hamburger menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden border-t bg-background/95 backdrop-blur">
+        <div className="lg:hidden border-t bg-background/95 backdrop-blur">
           <div className="mx-auto max-w-6xl px-4 py-6 space-y-4">
             {/* Navigation Links */}
             <div>
@@ -209,19 +219,14 @@ export default function Navbar({ socialMedia, resume }: NavbarProps) {
 
             {/* Action Buttons */}
             <div className="flex flex-col items-start space-y-4 px-4">
-              <Button
-                variant="solid"
-                size="large"
-                onClick={() => {
-                  const contactSection = document.getElementById('contact');
-                  if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                  setIsMobileMenuOpen(false);
-                }}
-              >
-                Get in Touch
-              </Button>
+              <Link href="/#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                <Button
+                  variant="solid"
+                  size="large"
+                >
+                  Get in Touch
+                </Button>
+              </Link>
 
               <button
                 type="button"

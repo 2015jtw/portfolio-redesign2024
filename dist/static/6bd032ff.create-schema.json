@@ -1,0 +1,1603 @@
+[
+  {
+    "of": [
+      {
+        "marks": {
+          "annotations": [
+            {
+              "fields": [
+                {
+                  "validation": [
+                    {
+                      "rules": [
+                        {
+                          "flag": "uri",
+                          "constraint": {
+                            "options": {
+                              "scheme": [
+                                "/^http$/",
+                                "/^https$/"
+                              ],
+                              "allowRelative": false,
+                              "relativeOnly": false,
+                              "allowCredentials": false
+                            }
+                          }
+                        }
+                      ],
+                      "level": "error"
+                    }
+                  ],
+                  "name": "href",
+                  "type": "url",
+                  "title": "URL"
+                }
+              ],
+              "name": "link",
+              "type": "object",
+              "title": "URL"
+            }
+          ],
+          "decorators": [
+            {
+              "value": "strong",
+              "title": "Strong"
+            },
+            {
+              "value": "em",
+              "title": "Emphasis"
+            }
+          ]
+        },
+        "lists": [
+          {
+            "value": "bullet",
+            "title": "Bullet"
+          }
+        ],
+        "styles": [
+          {
+            "value": "normal",
+            "title": "Normal"
+          },
+          {
+            "value": "h1",
+            "title": "H1"
+          },
+          {
+            "value": "h2",
+            "title": "H2"
+          },
+          {
+            "value": "h3",
+            "title": "H3"
+          },
+          {
+            "value": "h4",
+            "title": "H4"
+          },
+          {
+            "value": "blockquote",
+            "title": "Quote"
+          }
+        ],
+        "of": [],
+        "type": "block"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string",
+            "title": "Alternative Text"
+          }
+        ],
+        "type": "image"
+      }
+    ],
+    "name": "blockContent",
+    "type": "array"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "name": "description",
+        "type": "text"
+      }
+    ],
+    "name": "category",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "to": [
+          {
+            "type": "author"
+          }
+        ],
+        "name": "author",
+        "type": "reference"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string",
+            "title": "Alternative text"
+          }
+        ],
+        "name": "mainImage",
+        "type": "image"
+      },
+      {
+        "of": [
+          {
+            "to": [
+              {
+                "type": "category"
+              }
+            ],
+            "type": "reference",
+            "title": "Reference to category"
+          }
+        ],
+        "name": "categories",
+        "type": "array"
+      },
+      {
+        "name": "publishedAt",
+        "type": "datetime"
+      },
+      {
+        "name": "body",
+        "type": "blockContent"
+      }
+    ],
+    "name": "post",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "name"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ],
+                          "level": "error"
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          }
+        ],
+        "name": "bio",
+        "type": "array"
+      }
+    ],
+    "name": "author",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 50
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "The greeting text (e.g., \"Hello, I'm\")",
+        "name": "greeting",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 100
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Your name or the main name to display",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 2000
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "A brief introduction or tagline",
+        "name": "intro",
+        "type": "text",
+        "title": "Introduction"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "fields": [
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  },
+                  {
+                    "flag": "max",
+                    "constraint": 30
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "description": "The text displayed on the button",
+            "name": "text",
+            "type": "string",
+            "title": "Button Text"
+          },
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "description": "The URL the button should link to",
+            "name": "url",
+            "type": "string",
+            "title": "Button URL"
+          },
+          {
+            "initialValue": false,
+            "description": "Check if this is an external link",
+            "name": "external",
+            "type": "boolean",
+            "title": "External Link"
+          }
+        ],
+        "name": "ctaButton",
+        "type": "object",
+        "title": "Call to Action Button"
+      },
+      {
+        "options": {
+          "accept": ".pdf"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Upload your resume as a PDF file",
+        "name": "resume",
+        "type": "file",
+        "title": "Resume PDF"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 10
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "List of social media links using Simple Icons",
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      },
+                      {
+                        "flag": "max",
+                        "constraint": 50
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "description": "Name of the social media platform (e.g., LinkedIn, GitHub, Twitter)",
+                "name": "service",
+                "type": "string",
+                "title": "Platform Name"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "uri",
+                        "constraint": {
+                          "options": {
+                            "scheme": [
+                              "/^http$/",
+                              "/^https$/"
+                            ],
+                            "allowRelative": false,
+                            "relativeOnly": false,
+                            "allowCredentials": false
+                          }
+                        }
+                      },
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "description": "The URL to the social media profile",
+                "name": "url",
+                "type": "url",
+                "title": "Profile URL"
+              },
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "GitHub",
+                      "value": "github"
+                    },
+                    {
+                      "title": "LinkedIn",
+                      "value": "linkedin"
+                    },
+                    {
+                      "title": "Twitter",
+                      "value": "twitter"
+                    },
+                    {
+                      "title": "Instagram",
+                      "value": "instagram"
+                    },
+                    {
+                      "title": "Facebook",
+                      "value": "facebook"
+                    },
+                    {
+                      "title": "YouTube",
+                      "value": "youtube"
+                    },
+                    {
+                      "title": "Discord",
+                      "value": "discord"
+                    },
+                    {
+                      "title": "Twitch",
+                      "value": "twitch"
+                    },
+                    {
+                      "title": "Reddit",
+                      "value": "reddit"
+                    },
+                    {
+                      "title": "Medium",
+                      "value": "medium"
+                    },
+                    {
+                      "title": "Dev.to",
+                      "value": "devdotto"
+                    },
+                    {
+                      "title": "Stack Overflow",
+                      "value": "stackoverflow"
+                    }
+                  ]
+                },
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "valid",
+                        "constraint": [
+                          "github",
+                          "linkedin",
+                          "twitter",
+                          "instagram",
+                          "facebook",
+                          "youtube",
+                          "discord",
+                          "twitch",
+                          "reddit",
+                          "medium",
+                          "devdotto",
+                          "stackoverflow"
+                        ]
+                      },
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "description": "Simple Icons slug (e.g., \"github\", \"linkedin\", \"twitter\")",
+                "name": "iconSlug",
+                "type": "string"
+              }
+            ],
+            "type": "object",
+            "name": "socialItem",
+            "title": "Social Media Item"
+          }
+        ],
+        "name": "socialMedia",
+        "type": "array",
+        "title": "Social Media Links"
+      }
+    ],
+    "name": "hero",
+    "type": "document",
+    "title": "Hero Section"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 100
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "The name/title of the project",
+        "name": "title",
+        "type": "string",
+        "title": "Project Title"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 50
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Short title for the pin/display",
+        "name": "pinTitle",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 500
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Detailed description of the project",
+        "name": "desc",
+        "type": "text",
+        "title": "Project Description"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Main project screenshot or image",
+        "name": "img",
+        "type": "image",
+        "title": "Project Image"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 10
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "List of technology icons using Iconify slugs",
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "description": "Name of the technology (e.g., Next.js, React, TypeScript)",
+                "name": "name",
+                "type": "string",
+                "title": "Technology Name"
+              },
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "Next.js",
+                      "value": "simple-icons:nextdotjs"
+                    },
+                    {
+                      "title": "TypeScript",
+                      "value": "simple-icons:typescript"
+                    },
+                    {
+                      "title": "Sanity",
+                      "value": "simple-icons:sanity"
+                    },
+                    {
+                      "title": "Tailwind CSS",
+                      "value": "simple-icons:tailwindcss"
+                    },
+                    {
+                      "title": "Shadcn/ui",
+                      "value": "simple-icons:shadcnui"
+                    },
+                    {
+                      "title": "WordPress",
+                      "value": "simple-icons:wordpress"
+                    },
+                    {
+                      "title": "Convex",
+                      "value": "skill-icons:convex-dark"
+                    },
+                    {
+                      "title": "OpenAI",
+                      "value": "simple-icons:openai"
+                    },
+                    {
+                      "title": "Clerk",
+                      "value": "simple-icons:clerk"
+                    },
+                    {
+                      "title": "Drizzle",
+                      "value": "simple-icons:drizzle"
+                    },
+                    {
+                      "title": "Styled Components",
+                      "value": "simple-icons:styledcomponents"
+                    },
+                    {
+                      "title": "Node.js",
+                      "value": "simple-icons:nodedotjs"
+                    },
+                    {
+                      "title": "Firebase",
+                      "value": "simple-icons:firebase"
+                    },
+                    {
+                      "title": "CSS3",
+                      "value": "simple-icons:css3"
+                    },
+                    {
+                      "title": "MongoDB",
+                      "value": "simple-icons:mongodb"
+                    },
+                    {
+                      "title": "Express.js",
+                      "value": "simple-icons:express"
+                    },
+                    {
+                      "title": "React",
+                      "value": "simple-icons:react"
+                    },
+                    {
+                      "title": "Sass/SCSS",
+                      "value": "simple-icons:sass"
+                    },
+                    {
+                      "title": "Redux",
+                      "value": "simple-icons:redux"
+                    },
+                    {
+                      "title": "Stripe",
+                      "value": "simple-icons:stripe"
+                    },
+                    {
+                      "title": "Figma",
+                      "value": "simple-icons:figma"
+                    }
+                  ]
+                },
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "valid",
+                        "constraint": [
+                          "simple-icons:nextdotjs",
+                          "simple-icons:typescript",
+                          "simple-icons:sanity",
+                          "simple-icons:tailwindcss",
+                          "simple-icons:shadcnui",
+                          "simple-icons:wordpress",
+                          "skill-icons:convex-dark",
+                          "simple-icons:openai",
+                          "simple-icons:clerk",
+                          "simple-icons:drizzle",
+                          "simple-icons:styledcomponents",
+                          "simple-icons:nodedotjs",
+                          "simple-icons:firebase",
+                          "simple-icons:css3",
+                          "simple-icons:mongodb",
+                          "simple-icons:express",
+                          "simple-icons:react",
+                          "simple-icons:sass",
+                          "simple-icons:redux",
+                          "simple-icons:stripe",
+                          "simple-icons:figma"
+                        ]
+                      },
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "description": "Iconify icon name (e.g., simple-icons:nextdotjs, skill-icons:convex-dark)",
+                "name": "iconSlug",
+                "type": "string",
+                "title": "Iconify Icon Slug"
+              }
+            ],
+            "type": "object",
+            "name": "technology"
+          }
+        ],
+        "name": "iconSlugs",
+        "type": "array",
+        "title": "Technologies Used"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "URL to the live project",
+        "name": "link",
+        "type": "url",
+        "title": "Live Site URL"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 100
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Name of the client or company",
+        "name": "clientName",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Website",
+              "value": "website"
+            },
+            {
+              "title": "E-commerce",
+              "value": "ecommerce"
+            },
+            {
+              "title": "Web Application",
+              "value": "webapp"
+            },
+            {
+              "title": "Mobile App",
+              "value": "mobile"
+            },
+            {
+              "title": "Dashboard",
+              "value": "dashboard"
+            },
+            {
+              "title": "Landing Page",
+              "value": "landing"
+            }
+          ]
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "website",
+                  "ecommerce",
+                  "webapp",
+                  "mobile",
+                  "dashboard",
+                  "landing"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Type of project (e.g., Website, E-commerce, Web App)",
+        "name": "projectType",
+        "type": "string"
+      },
+      {
+        "initialValue": false,
+        "description": "Mark this project as featured",
+        "name": "featured",
+        "type": "boolean",
+        "title": "Featured Project"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "min",
+                "constraint": 0
+              },
+              {
+                "flag": "max",
+                "constraint": 100
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Order in which projects should be displayed (lower numbers first)",
+        "name": "order",
+        "type": "number",
+        "title": "Display Order"
+      }
+    ],
+    "name": "clientWork",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 100
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "The name/title of the project",
+        "name": "title",
+        "type": "string",
+        "title": "Project Name"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 50
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Short title for the pin/display",
+        "name": "pinTitle",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 500
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Detailed description of the project",
+        "name": "des",
+        "type": "text",
+        "title": "Project Description"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Main project screenshot or image",
+        "name": "img",
+        "type": "image",
+        "title": "Project Image"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 10
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "List of technology icons using Iconify slugs",
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "description": "Name of the technology (e.g., Next.js, React, TypeScript)",
+                "name": "name",
+                "type": "string",
+                "title": "Technology Name"
+              },
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "Next.js",
+                      "value": "simple-icons:nextdotjs"
+                    },
+                    {
+                      "title": "TypeScript",
+                      "value": "simple-icons:typescript"
+                    },
+                    {
+                      "title": "Sanity",
+                      "value": "simple-icons:sanity"
+                    },
+                    {
+                      "title": "Tailwind CSS",
+                      "value": "simple-icons:tailwindcss"
+                    },
+                    {
+                      "title": "Shadcn/ui",
+                      "value": "simple-icons:shadcnui"
+                    },
+                    {
+                      "title": "WordPress",
+                      "value": "simple-icons:wordpress"
+                    },
+                    {
+                      "title": "Convex",
+                      "value": "skill-icons:convex-dark"
+                    },
+                    {
+                      "title": "OpenAI",
+                      "value": "simple-icons:openai"
+                    },
+                    {
+                      "title": "Clerk",
+                      "value": "simple-icons:clerk"
+                    },
+                    {
+                      "title": "Drizzle",
+                      "value": "simple-icons:drizzle"
+                    },
+                    {
+                      "title": "Styled Components",
+                      "value": "simple-icons:styledcomponents"
+                    },
+                    {
+                      "title": "Node.js",
+                      "value": "simple-icons:nodedotjs"
+                    },
+                    {
+                      "title": "Firebase",
+                      "value": "simple-icons:firebase"
+                    },
+                    {
+                      "title": "CSS3",
+                      "value": "simple-icons:css3"
+                    },
+                    {
+                      "title": "MongoDB",
+                      "value": "simple-icons:mongodb"
+                    },
+                    {
+                      "title": "Express.js",
+                      "value": "simple-icons:express"
+                    },
+                    {
+                      "title": "React",
+                      "value": "simple-icons:react"
+                    },
+                    {
+                      "title": "Sass/SCSS",
+                      "value": "simple-icons:sass"
+                    },
+                    {
+                      "title": "Redux",
+                      "value": "simple-icons:redux"
+                    },
+                    {
+                      "title": "Stripe",
+                      "value": "simple-icons:stripe"
+                    },
+                    {
+                      "title": "Figma",
+                      "value": "simple-icons:figma"
+                    }
+                  ]
+                },
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "valid",
+                        "constraint": [
+                          "simple-icons:nextdotjs",
+                          "simple-icons:typescript",
+                          "simple-icons:sanity",
+                          "simple-icons:tailwindcss",
+                          "simple-icons:shadcnui",
+                          "simple-icons:wordpress",
+                          "skill-icons:convex-dark",
+                          "simple-icons:openai",
+                          "simple-icons:clerk",
+                          "simple-icons:drizzle",
+                          "simple-icons:styledcomponents",
+                          "simple-icons:nodedotjs",
+                          "simple-icons:firebase",
+                          "simple-icons:css3",
+                          "simple-icons:mongodb",
+                          "simple-icons:express",
+                          "simple-icons:react",
+                          "simple-icons:sass",
+                          "simple-icons:redux",
+                          "simple-icons:stripe",
+                          "simple-icons:figma"
+                        ]
+                      },
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "description": "Iconify icon name (e.g., simple-icons:nextdotjs, skill-icons:convex-dark)",
+                "name": "iconSlug",
+                "type": "string",
+                "title": "Iconify Icon Slug"
+              }
+            ],
+            "type": "object",
+            "name": "technology"
+          }
+        ],
+        "name": "iconSlugs",
+        "type": "array",
+        "title": "Technologies Used"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "URL to the live project",
+        "name": "link",
+        "type": "url",
+        "title": "Live Site URL"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Website",
+              "value": "website"
+            },
+            {
+              "title": "E-commerce",
+              "value": "ecommerce"
+            },
+            {
+              "title": "Web Application",
+              "value": "webapp"
+            },
+            {
+              "title": "Mobile App",
+              "value": "mobile"
+            },
+            {
+              "title": "Dashboard",
+              "value": "dashboard"
+            },
+            {
+              "title": "Landing Page",
+              "value": "landing"
+            }
+          ]
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "website",
+                  "ecommerce",
+                  "webapp",
+                  "mobile",
+                  "dashboard",
+                  "landing"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Type of project (e.g., Website, E-commerce, Web App)",
+        "name": "projectType",
+        "type": "string"
+      },
+      {
+        "initialValue": false,
+        "description": "Mark this project as featured",
+        "name": "featured",
+        "type": "boolean",
+        "title": "Featured Project"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "min",
+                "constraint": 0
+              },
+              {
+                "flag": "max",
+                "constraint": 100
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Order in which projects should be displayed (lower numbers first)",
+        "name": "order",
+        "type": "number",
+        "title": "Display Order"
+      }
+    ],
+    "name": "projects",
+    "type": "document",
+    "title": "Recent Projects"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 100
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Main heading for the about section",
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 200
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Subtitle or tagline for the about section",
+        "name": "subtitle",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 2000
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Personal introduction and about me content",
+        "name": "intro",
+        "type": "text",
+        "title": "Introduction"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 1500
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Information about upbringing, travel, and personal background",
+        "name": "background",
+        "type": "text"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 1500
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Personal interests, hobbies, and activities outside of work",
+        "name": "interests",
+        "type": "text",
+        "title": "Interests & Hobbies"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "max",
+                "constraint": 500
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Closing statement that summarizes who you are",
+        "name": "conclusion",
+        "type": "text"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "min",
+                "constraint": 1
+              },
+              {
+                "flag": "max",
+                "constraint": 35
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Collection of personal photos to display in a grid",
+        "of": [
+          {
+            "fields": [
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "fields": [
+                  {
+                    "description": "Alternative text for accessibility",
+                    "name": "alt",
+                    "type": "string",
+                    "title": "Alt Text"
+                  }
+                ],
+                "name": "image",
+                "type": "image"
+              },
+              {
+                "description": "Optional caption for the photo",
+                "name": "caption",
+                "type": "string"
+              }
+            ],
+            "type": "object",
+            "name": "photo"
+          }
+        ],
+        "name": "photos",
+        "type": "array",
+        "title": "Photos Grid"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "min",
+                "constraint": 0
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Order in which the about section should be displayed",
+        "name": "order",
+        "type": "number"
+      }
+    ],
+    "name": "about",
+    "type": "document"
+  }
+]

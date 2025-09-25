@@ -33,8 +33,8 @@ const Hero = ({ data }: HeroProps) => {
       </div>
       <GridBackgroundDemo className="absolute top-0 left-0" />
       <div className="flex flex-col justify-center relative z-10 h-screen">
-        <div className="max-w-[89vw] md:max-w-3xl w-full lg:max-w-[50vw] flex flex-col items-center justify-center order-2 mx-auto pt-4 md:pt-0 space-y-6">
-          <h2 className="heading text-black dark:text-white">{greeting}</h2>
+        <div className="max-w-[89vw] md:max-w-3xl w-full lg:max-w-[60vw] flex flex-col items-center justify-center order-2 mx-auto pt-4 md:pt-0 space-y-6">
+          <h2 className="heading text-black dark:text-white">{greeting} 👋</h2>
 
           <TextGenerateEffect
             className="text-center text-[40px] md:text-6xl py-2"
