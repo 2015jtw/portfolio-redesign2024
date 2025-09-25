@@ -10,8 +10,6 @@ import MagicButton from "./ui/magicButton";
 import { FaLocationArrow } from "react-icons/fa";
 import { File } from "lucide-react";
 
-// Data
-import { socialMedia } from "@/data";
 
 const Footer = () => {
   const { theme } = useTheme();
@@ -55,23 +53,6 @@ const Footer = () => {
         <p className="md:text-base text-sm md:font-normal font-light py-4 md:py-0">
           Copyright © 2025 JTW. All rights reserved.
         </p>
-        <div className="flex items-center md:gap-3 gap-6">
-          {socialMedia.map((item) => (
-            <Link
-              key={item.id}
-              className="group w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
-              href={item.link}
-              target="_blank">
-              <Image
-                src={item.img ?? "/logo.svg"}
-                alt={`${item.id}`}
-                width={20}
-                height={20}
-                className="group-hover:brightness-0 group-hover:text-blue-500 group-hover:[filter:invert(48%)_sepia(79%)_saturate(2476%)_hue-rotate(190deg)_brightness(118%)_contrast(119%)]"
-              />
-            </Link>
-          ))}
-        </div>
       </div>
     </footer>
   );

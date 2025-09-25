@@ -76,7 +76,7 @@ function Navbar({
       )}
     >
       <Menu setActive={setActive}>
-        <Link href="#home">
+        <Link href="#home" legacyBehavior>
           <Image src="/hipster-logo.svg" alt="Logo" height={50} width={50} />
         </Link>
         {navItems.map((item) => (
