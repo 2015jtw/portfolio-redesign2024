@@ -61,8 +61,7 @@ const Footer = () => {
               key={item.id}
               className="group w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
               href={item.link}
-              target="_blank"
-            >
+              target="_blank">
               <Image
                 src={item.img ?? "/logo.svg"}
                 alt={`${item.id}`}

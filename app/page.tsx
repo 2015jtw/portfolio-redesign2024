@@ -7,7 +7,6 @@ import { FixedNavbar } from "./components/FixedNavbar";
 import Footer from "./components/Footer";
 import WorkExperience from "./components/WorkExperience";
 import PersonalProjects from "./components/PersonalProjects";
-import Grid from "./components/grid";
 import Approach from "./components/Approach";
 import FreelanceProjects from "./components/FreelanceProjects";
 
@@ -17,7 +16,6 @@ export default function Home() {
       <div className="max-w-7xl w-full font-alegreya">
         <FixedNavbar />
         <Hero />
-        <Grid />
         <FreelanceProjects />
         <WorkExperience />
         <PersonalProjects />

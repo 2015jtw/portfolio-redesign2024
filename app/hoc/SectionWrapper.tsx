@@ -5,7 +5,7 @@ import { styles } from "../styles";
 import { staggerContainer } from "../../lib/motion";
 
 const SectionWrapper = (Component: any) =>
-  function HOC() {
+  (function HOC() {
     return (
       <motion.section
         variants={staggerContainer(0.3, 0.2)}
@@ -17,6 +17,6 @@ const SectionWrapper = (Component: any) =>
         <Component />
       </motion.section>
     );
-  };
+  });
 
 export default SectionWrapper;
