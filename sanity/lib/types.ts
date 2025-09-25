@@ -1,11 +1,11 @@
-import { SanityDocument, SanityImageAsset, SanityImageMetadata } from 'sanity'
+import { SanityDocument, ImageMetadata } from 'sanity'
 
 // Base types for common fields
 export interface SanityImage {
   asset: {
     _id: string
     url: string
-    metadata: SanityImageMetadata
+    metadata: ImageMetadata
   }
 }
 
@@ -76,6 +76,22 @@ export interface Projects extends SanityDocument {
   order: number
 }
 
+// About Schema Types
+export interface About extends SanityDocument {
+  _type: 'about'
+  title: string
+  subtitle: string
+  intro: string
+  background: string
+  interests: string
+  conclusion: string
+  photos: Array<{
+    image: SanityImage & { alt?: string }
+    caption?: string
+  }>
+  order: number
+}
+
 // Query Result Types
 export type HeroQueryResult = Hero | null
 export type ClientWorkQueryResult = ClientWork[]
@@ -84,3 +100,4 @@ export type FeaturedProjectsQueryResult = Projects[]
 export type FeaturedClientWorkQueryResult = ClientWork[]
 export type ProjectBySlugQueryResult = Projects | null
 export type ClientWorkBySlugQueryResult = ClientWork | null
+export type AboutQueryResult = About | null

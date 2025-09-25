@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Alegreya } from "next/font/google";
-import "./globals.css";
-import { ThemeProvider } from "./components/theme-provider";
-import Navbar from "./components/navbar";
-import Footer from "./components/Footer";
+import "../globals.css";
+import { ThemeProvider } from "../components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 const alegreya = Alegreya({
@@ -13,11 +11,11 @@ const alegreya = Alegreya({
 });
 
 export const metadata: Metadata = {
-  title: "JW Portfolio",
-  description: "Designed and developed this NextJS app for my portfolio",
+  title: "JW Portfolio - Studio",
+  description: "Sanity Studio for JW Portfolio",
 };
 
-export default function RootLayout({
+export default function StudioLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -31,9 +29,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
+          {children}
         </ThemeProvider>
       </body>
     </html>

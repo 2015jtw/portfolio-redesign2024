@@ -5,7 +5,8 @@ import type {
   FeaturedProjectsQueryResult,
   FeaturedClientWorkQueryResult,
   ProjectBySlugQueryResult,
-  ClientWorkBySlugQueryResult
+  ClientWorkBySlugQueryResult,
+  AboutQueryResult
 } from './types'
 
 // Hero Section Query
@@ -190,5 +191,31 @@ export const CLIENT_WORK_BY_SLUG_QUERY = `*[_type == "clientWork" && slug.curren
   clientName,
   projectType,
   featured,
+  order
+}` as const
+
+// About Section Query
+export const ABOUT_QUERY = `*[_type == "about"][0]{
+  _id,
+  _type,
+  title,
+  subtitle,
+  intro,
+  background,
+  interests,
+  conclusion,
+  photos[]{
+    image{
+      asset->{
+        _id,
+        url,
+        metadata{
+          dimensions
+        }
+      },
+      alt
+    },
+    caption
+  },
   order
 }` as const

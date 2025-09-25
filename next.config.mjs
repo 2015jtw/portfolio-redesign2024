@@ -7,6 +7,12 @@ const nextConfig = {
     remotePatterns: [
       // Add your domains here if you load external images
       // { protocol: 'https', hostname: 'images.ctfassets.net' },
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+        port: "",
+        pathname: "/images/**",
+      },
     ],
   },
 };

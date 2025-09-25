@@ -6,7 +6,8 @@ import {
   FEATURED_PROJECTS_QUERY,
   FEATURED_CLIENT_WORK_QUERY,
   PROJECT_BY_SLUG_QUERY,
-  CLIENT_WORK_BY_SLUG_QUERY
+  CLIENT_WORK_BY_SLUG_QUERY,
+  ABOUT_QUERY
 } from './queries'
 import type {
   HeroQueryResult,
@@ -15,7 +16,8 @@ import type {
   FeaturedProjectsQueryResult,
   FeaturedClientWorkQueryResult,
   ProjectBySlugQueryResult,
-  ClientWorkBySlugQueryResult
+  ClientWorkBySlugQueryResult,
+  AboutQueryResult
 } from './types'
 
 // Hero data fetching
@@ -91,6 +93,17 @@ export async function getClientWorkBySlug(slug: string): Promise<ClientWorkBySlu
     return data
   } catch (error) {
     console.error('Error fetching client work by slug:', error)
+    return null
+  }
+}
+
+// About data fetching
+export async function getAboutData(): Promise<AboutQueryResult> {
+  try {
+    const data = await client.fetch(ABOUT_QUERY)
+    return data
+  } catch (error) {
+    console.error('Error fetching about data:', error)
     return null
   }
 }

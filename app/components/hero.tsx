@@ -3,9 +3,21 @@ import { Spotlight } from "./ui/Spotlight";
 import { GridBackgroundDemo } from "./ui/gridBackground";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import MagicButton from "./ui/magicButton";
-import { FaLocationArrow } from "react-icons/fa";
+import { FaLocationArrow, FaFilePdf } from "react-icons/fa";
+import { SocialIcons } from "./ui/SocialIcons";
+import type { HeroQueryResult } from "@/sanity/lib/types";
 
-const Hero = () => {
+interface HeroProps {
+  data: HeroQueryResult;
+}
+
+const Hero = ({ data }: HeroProps) => {
+  if (!data) {
+    return <div>Loading hero data...</div>;
+  }
+
+  const { greeting, name, intro, ctaButton, socialMedia } = data;
+
   return (
     <div className="font-alegreya" id="home">
       <div>
@@ -23,28 +35,47 @@ const Hero = () => {
       <GridBackgroundDemo className="absolute top-0 left-0" />
       <div className="flex flex-col justify-center relative my-10 z-10 h-screen">
         <div className="max-w-[89vw] md:max-w-2xl w-full lg:max-w-[50vw] flex flex-col items-center justify-center order-2 mx-auto pt-4 md:pt-0 space-y-6">
-          <h2 className="heading text-black dark:text-white">Hi there 👋</h2>
+          <h2 className="heading text-black dark:text-white">{greeting}</h2>
 
           <TextGenerateEffect
             className="text-center text-[40px] md:text-6xl py-2"
-            words="I am Joshua Worden"
+            words={name}
           />
 
           <p className="text-center text-black dark:text-white font-normal">
-            I am a web developer who specializes in building high-performance,
-            SEO-optimized user interfaces that combine exceptional functionality
-            with compelling design. With extensive experience in Next.js
-            ecosystem, I have delivered successful projects on major e-commerce
-            platforms including Shopify and BigCommerce.
+            {intro}
           </p>
-          <a href="#freelance" className="py-4 md:py-0">
-            <MagicButton
-              title="Show my Work"
-              icon={<FaLocationArrow />}
-              position="right"
-              otherClasses="gap-2 bg-blue-500 font-semibold"
-            />
-          </a>
+          
+          {/* Centered Show Work Button */}
+          {ctaButton && (
+            <div className="flex justify-center">
+              <a 
+                href={ctaButton.url}
+                target={ctaButton.external ? '_blank' : '_self'}
+                rel={ctaButton.external ? 'noopener noreferrer' : undefined}
+                className="py-4 md:py-0"
+              >
+                <MagicButton
+                  title={ctaButton.text}
+                  icon={<FaLocationArrow />}
+                  position="right"
+                  otherClasses="gap-2 bg-blue-500 font-semibold"
+                />
+              </a>
+            </div>
+          )}
+          
+          {/* Social Media Icons and Resume in a Row */}
+          <div className="flex justify-center items-center gap-6 mt-6">
+            {socialMedia && socialMedia.length > 0 && (
+              <SocialIcons 
+                items={socialMedia}
+                className="social-icons"
+                iconSize={24}
+              />
+            )}
+            
+          </div>
         </div>
       </div>
     </div>

@@ -64,12 +64,17 @@ export default function ContactForm() {
   return (
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12">Get In Touch</h2>
+        <h2 className="heading text-center mb-12 lg:max-w-[45vw]">
+          Ready to take{" "}
+          <span className="text-blue-500 dark:text-purple">your project</span>{" "}
+          to the next level?
+        </h2>
+
         
         <div className="max-w-2xl mx-auto">
           {submitStatus === 'success' && (
             <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
-              Thank you for your message! I'll get back to you soon.
+              Thank you for your message! I&apos;ll get back to you soon.
             </div>
           )}
           
@@ -79,7 +84,7 @@ export default function ContactForm() {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6" suppressHydrationWarning>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -93,6 +98,7 @@ export default function ContactForm() {
                   onChange={handleChange}
                   required
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+                  suppressHydrationWarning
                 />
               </div>
               
@@ -108,6 +114,7 @@ export default function ContactForm() {
                   onChange={handleChange}
                   required
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+                  suppressHydrationWarning
                 />
               </div>
             </div>
@@ -123,6 +130,7 @@ export default function ContactForm() {
                 value={formData.subject}
                 onChange={handleChange}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+                suppressHydrationWarning
               />
             </div>
             
@@ -138,6 +146,7 @@ export default function ContactForm() {
                 required
                 rows={6}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
+                suppressHydrationWarning
               />
             </div>
             
@@ -145,6 +154,7 @@ export default function ContactForm() {
               type="submit"
               disabled={isSubmitting}
               className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-semibold py-3 px-6 rounded-md transition-colors"
+              suppressHydrationWarning
             >
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
