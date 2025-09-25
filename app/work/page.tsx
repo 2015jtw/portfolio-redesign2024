@@ -1,10 +1,5 @@
 import { getClientWorkData } from '@/sanity/lib/data'
-import dynamic from 'next/dynamic'
-
-// Lazy load heavy component
-const FreelanceProjects = dynamic(() => import('@/app/components/FreelanceProjects'), {
-  loading: () => <div className="py-20"><div className="animate-pulse bg-gray-200 dark:bg-gray-700 h-96 rounded-md"></div></div>
-})
+import FreelanceProjects from '@/app/components/FreelanceProjects'
 
 export default async function WorkPage() {
   const clientWorkData = await getClientWorkData()

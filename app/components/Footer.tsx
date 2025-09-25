@@ -12,14 +12,6 @@ interface FooterProps {
 const Footer = ({ socialMedia }: FooterProps) => {
   return (
     <footer className="w-full relative bg-white dark:bg-black-100">
-      <div className="w-full absolute left-0 -bottom-12 min-h-20 bg-white dark:bg-black-100">
-        <Image
-          src="/footer-grid.svg"
-          alt="footer-grid"
-          fill
-          className="opacity-40 object-cover"
-        />
-      </div>
      
       <div className="flex flex-col items-center space-y-4 py-8 relative z-10">
         {/* Social Media Icons with Labels */}
