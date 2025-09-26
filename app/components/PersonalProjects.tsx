@@ -18,7 +18,6 @@ interface PersonalProjectsProps {
 }
 
 const PersonalProjects = ({ data }: PersonalProjectsProps) => {
-
   if (!data || data.length === 0) {
     return (
       <div className="py-20" id="projects">
