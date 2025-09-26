@@ -7,7 +7,7 @@ require("dotenv").config({ path: ".env.local" });
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 async function testEmail() {
-  try {
+  try { 
     console.log("Testing email configuration...");
     console.log(
       "RESEND_API_KEY:",
