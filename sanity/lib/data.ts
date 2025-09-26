@@ -23,7 +23,9 @@ import type {
 // Hero data fetching
 export async function getHeroData(): Promise<HeroQueryResult> {
   try {
-    const data = await client.fetch(HERO_QUERY)
+    const data = await client.fetch(HERO_QUERY, {}, {
+      next: { revalidate: 60 } // Always fetch fresh data
+    })
     return data
   } catch (error) {
     console.error('Error fetching hero data:', error)
@@ -34,7 +36,9 @@ export async function getHeroData(): Promise<HeroQueryResult> {
 // Client work data fetching
 export async function getClientWorkData(): Promise<ClientWorkQueryResult> {
   try {
-    const data = await client.fetch(CLIENT_WORK_QUERY)
+    const data = await client.fetch(CLIENT_WORK_QUERY, {}, {
+      next: { revalidate: 60 } // Always fetch fresh data
+    })
     return data || []
   } catch (error) {
     console.error('Error fetching client work data:', error)
@@ -45,7 +49,9 @@ export async function getClientWorkData(): Promise<ClientWorkQueryResult> {
 // Projects data fetching
 export async function getProjectsData(): Promise<ProjectsQueryResult> {
   try {
-    const data = await client.fetch(PROJECTS_QUERY)
+    const data = await client.fetch(PROJECTS_QUERY, {}, {
+      next: { revalidate: 60 } // Always fetch fresh data
+    })
     return data || []
   } catch (error) {
     console.error('Error fetching projects data:', error)
@@ -56,7 +62,9 @@ export async function getProjectsData(): Promise<ProjectsQueryResult> {
 // Featured projects data fetching
 export async function getFeaturedProjectsData(): Promise<FeaturedProjectsQueryResult> {
   try {
-    const data = await client.fetch(FEATURED_PROJECTS_QUERY)
+    const data = await client.fetch(FEATURED_PROJECTS_QUERY, {}, {
+      next: { revalidate: 60 } // Always fetch fresh data
+    })
     return data || []
   } catch (error) {
     console.error('Error fetching featured projects data:', error)
@@ -67,7 +75,9 @@ export async function getFeaturedProjectsData(): Promise<FeaturedProjectsQueryRe
 // Featured client work data fetching
 export async function getFeaturedClientWorkData(): Promise<FeaturedClientWorkQueryResult> {
   try {
-    const data = await client.fetch(FEATURED_CLIENT_WORK_QUERY)
+    const data = await client.fetch(FEATURED_CLIENT_WORK_QUERY, {}, {
+      next: { revalidate: 60 } // Always fetch fresh data
+    })
     return data || []
   } catch (error) {
     console.error('Error fetching featured client work data:', error)
@@ -78,7 +88,9 @@ export async function getFeaturedClientWorkData(): Promise<FeaturedClientWorkQue
 // Single project by slug
 export async function getProjectBySlug(slug: string): Promise<ProjectBySlugQueryResult> {
   try {
-    const data = await client.fetch(PROJECT_BY_SLUG_QUERY, { slug })
+    const data = await client.fetch(PROJECT_BY_SLUG_QUERY, { slug }, {
+      next: { revalidate: 60 } // Always fetch fresh data
+    })
     return data
   } catch (error) {
     console.error('Error fetching project by slug:', error)
@@ -89,7 +101,9 @@ export async function getProjectBySlug(slug: string): Promise<ProjectBySlugQuery
 // Single client work by slug
 export async function getClientWorkBySlug(slug: string): Promise<ClientWorkBySlugQueryResult> {
   try {
-    const data = await client.fetch(CLIENT_WORK_BY_SLUG_QUERY, { slug })
+    const data = await client.fetch(CLIENT_WORK_BY_SLUG_QUERY, { slug }, {
+      next: { revalidate: 60 } // Always fetch fresh data
+    })
     return data
   } catch (error) {
     console.error('Error fetching client work by slug:', error)
@@ -100,7 +114,9 @@ export async function getClientWorkBySlug(slug: string): Promise<ClientWorkBySlu
 // About data fetching
 export async function getAboutData(): Promise<AboutQueryResult> {
   try {
-    const data = await client.fetch(ABOUT_QUERY)
+    const data = await client.fetch(ABOUT_QUERY, {}, {
+      next: { revalidate: 60 } // Always fetch fresh data
+    })
     return data
   } catch (error) {
     console.error('Error fetching about data:', error)
