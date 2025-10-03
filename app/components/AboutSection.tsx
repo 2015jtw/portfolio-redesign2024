@@ -18,7 +18,7 @@ export default function AboutSection({ data }: AboutSectionProps) {
     )
   }
 
-  const { title, subtitle, intro, background, interests, conclusion, photos } = data
+  const { title, subtitle, intro, background, conclusion, photos } = data
 
   return (
     <section id="about" className="py-20">
@@ -50,18 +50,11 @@ export default function AboutSection({ data }: AboutSectionProps) {
             </p>
           </div>
           
-          {/* Interests */}
-          <div className="mb-8">
-            <h4 className="text-lg font-semibold mb-4 text-black dark:text-white">Interests & Hobbies</h4>
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              {interests}
-            </p>
-          </div>
+         
           
           {/* Conclusion */}
           <div className="mb-12">
-            <h4 className="text-lg font-semibold mb-4 text-black dark:text-white">Conclusion</h4>
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed italic">
               {conclusion}
             </p>
           </div>
