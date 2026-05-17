@@ -1,11 +1,11 @@
-import {BriefcaseIcon} from '@sanity/icons'
+import {CaseIcon} from '@sanity/icons'
 import {defineField, defineType} from 'sanity'
 
 export const companyWorkType = defineType({
   name: 'companyWork',
   title: 'Agency Work',
   type: 'document',
-  icon: BriefcaseIcon,
+  icon: CaseIcon,
   fields: [
     defineField({
       name: 'employer',
