@@ -43,6 +43,7 @@ export default function ContactForm() {
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
+    mode: 'onChange',
     defaultValues: {
       fullName: '',
       email: '',
@@ -70,8 +71,7 @@ export default function ContactForm() {
         setSubmitStatus('success')
         form.reset()
       } else {
-        const errorData = await response.json().catch(() => ({}))
-        console.error('Contact form error:', errorData)
+        console.error('Contact form error:', result)
         setSubmitStatus('error')
       }
     } catch (error) {
@@ -114,7 +114,7 @@ export default function ContactForm() {
               Thank you for your message! I&apos;ll get back to you soon.
             </div>
           )}
-          
+
           {submitStatus === 'error' && (
             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
               Sorry, there was an error sending your message. Please try again.
@@ -127,64 +127,77 @@ export default function ContactForm() {
                 <FormField
                   control={form.control}
                   name="fullName"
-                  render={({ field }) => (
+                  render={({ field, fieldState }) => (
                     <FormItem>
                       <FormLabel>Full Name *</FormLabel>
                       <FormControl>
-                        <Input placeholder="Enter your full name" {...field} />
+                        <Input
+                          placeholder="Enter your full name"
+                          className={fieldState.isDirty && !fieldState.invalid ? 'border-green-500 focus-visible:ring-green-500' : ''}
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="email"
-                  render={({ field }) => (
+                  render={({ field, fieldState }) => (
                     <FormItem>
                       <FormLabel>Email *</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder="Enter your email" {...field} />
+                        <Input
+                          type="email"
+                          placeholder="Enter your email"
+                          className={fieldState.isDirty && !fieldState.invalid ? 'border-green-500 focus-visible:ring-green-500' : ''}
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
               </div>
-              
+
               <FormField
                 control={form.control}
                 name="title"
-                render={({ field }) => (
+                render={({ field, fieldState }) => (
                   <FormItem>
                     <FormLabel>Title of Message *</FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter message title" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Message *</FormLabel>
-                    <FormControl>
-                      <Textarea 
-                        placeholder="Enter your message" 
-                        className="min-h-[120px]"
-                        {...field} 
+                      <Input
+                        placeholder="Enter message title"
+                        className={fieldState.isDirty && !fieldState.invalid ? 'border-green-500 focus-visible:ring-green-500' : ''}
+                        {...field}
                       />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-              
+
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field, fieldState }) => (
+                  <FormItem>
+                    <FormLabel>Message *</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        placeholder="Enter your message"
+                        className={`min-h-[120px]${fieldState.isDirty && !fieldState.invalid ? ' border-green-500 focus-visible:ring-green-500' : ''}`}
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
               <Button
                 type="submit"
                 disabled={isSubmitting}

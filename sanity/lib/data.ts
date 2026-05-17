@@ -7,6 +7,7 @@ import {
   FEATURED_CLIENT_WORK_QUERY,
   PROJECT_BY_SLUG_QUERY,
   CLIENT_WORK_BY_SLUG_QUERY,
+  COMPANY_WORK_QUERY,
   ABOUT_QUERY
 } from './queries'
 import type {
@@ -17,6 +18,7 @@ import type {
   FeaturedClientWorkQueryResult,
   ProjectBySlugQueryResult,
   ClientWorkBySlugQueryResult,
+  CompanyWorkQueryResult,
   AboutQueryResult
 } from './types'
 
@@ -108,6 +110,19 @@ export async function getClientWorkBySlug(slug: string): Promise<ClientWorkBySlu
   } catch (error) {
     console.error('Error fetching client work by slug:', error)
     return null
+  }
+}
+
+// Company / agency work data fetching
+export async function getCompanyWorkData(): Promise<CompanyWorkQueryResult> {
+  try {
+    const data = await client.fetch(COMPANY_WORK_QUERY, {}, {
+      next: { revalidate: 60 }
+    })
+    return data || []
+  } catch (error) {
+    console.error('Error fetching company work data:', error)
+    return []
   }
 }
 

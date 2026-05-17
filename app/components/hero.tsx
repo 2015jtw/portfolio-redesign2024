@@ -1,22 +1,25 @@
-import React from "react";
-import Link from "next/link";
-import { Spotlight } from "./ui/Spotlight";
-import { GridBackgroundDemo } from "./ui/gridBackground";
-import { TextGenerateEffect } from "./ui/text-generate-effect";
-import MagicButton from "./ui/magicButton";
-import { FaLocationArrow } from "react-icons/fa";
-import type { HeroQueryResult } from "@/sanity/lib/types";
+'use client'
+
+import React from "react"
+import Link from "next/link"
+import { motion } from "framer-motion"
+import { Spotlight } from "./ui/Spotlight"
+import { GridBackgroundDemo } from "./ui/gridBackground"
+import { TextGenerateEffect } from "./ui/text-generate-effect"
+import MagicButton from "./ui/magicButton"
+import { FaLocationArrow } from "react-icons/fa"
+import type { HeroQueryResult } from "@/sanity/lib/types"
 
 interface HeroProps {
-  data: HeroQueryResult;
+  data: HeroQueryResult
 }
 
 const Hero = ({ data }: HeroProps) => {
   if (!data) {
-    return <div>Loading hero data...</div>;
+    return <div>Loading hero data...</div>
   }
 
-  const { greeting, name, intro, ctaButton, socialMedia } = data;
+  const { greeting, name, intro, ctaButton } = data
 
   return (
     <div className="font-alegreya" id="home">
@@ -25,7 +28,6 @@ const Hero = ({ data }: HeroProps) => {
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
           fill="white"
         />
-
         <Spotlight
           className="top-10 left-full h-[80vh] w-[50vw]"
           fill="purple"
@@ -42,17 +44,23 @@ const Hero = ({ data }: HeroProps) => {
             words={name}
           />
 
-          <p className="text-center text-black dark:text-white font-normal">
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.5, duration: 0.5 }}
+            className="text-center text-black dark:text-white font-normal"
+          >
             {intro}
-          </p>
-          
-          {/* Centered Show Work Button */}
+          </motion.p>
+
           {ctaButton && (
-            <div className="flex justify-center">
-              <Link 
-                href="/work"
-                className="py-4 md:py-0"
-              >
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.8, duration: 0.5 }}
+              className="flex justify-center"
+            >
+              <Link href="/work" className="py-4 md:py-0">
                 <MagicButton
                   title={ctaButton.text}
                   icon={<FaLocationArrow />}
@@ -60,13 +68,12 @@ const Hero = ({ data }: HeroProps) => {
                   otherClasses="gap-2 bg-blue-500 font-semibold"
                 />
               </Link>
-            </div>
+            </motion.div>
           )}
-          
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

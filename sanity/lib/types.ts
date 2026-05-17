@@ -76,6 +76,21 @@ export interface Projects extends SanityDocument {
   order: number
 }
 
+// Company / Agency Work Schema Types
+export interface CompanyWork extends SanityDocument {
+  _type: 'companyWork'
+  employer: 'MageMontreal' | 'Arctic Leaf'
+  title: string
+  pinTitle: string
+  desc: string
+  img: SanityImage
+  iconSlugs: Technology[]
+  link: string
+  projectType: 'website' | 'ecommerce' | 'webapp' | 'mobile' | 'dashboard' | 'landing'
+  featured: boolean
+  order: number
+}
+
 // About Schema Types
 export interface About extends SanityDocument {
   _type: 'about'
@@ -95,6 +110,7 @@ export interface About extends SanityDocument {
 // Query Result Types
 export type HeroQueryResult = Hero | null
 export type ClientWorkQueryResult = ClientWork[]
+export type CompanyWorkQueryResult = CompanyWork[]
 export type ProjectsQueryResult = Projects[]
 export type FeaturedProjectsQueryResult = Projects[]
 export type FeaturedClientWorkQueryResult = ClientWork[]

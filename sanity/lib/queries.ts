@@ -194,6 +194,33 @@ export const CLIENT_WORK_BY_SLUG_QUERY = `*[_type == "clientWork" && slug.curren
   order
 }` as const
 
+// Company / Agency Work Query
+export const COMPANY_WORK_QUERY = `*[_type == "companyWork"] | order(order asc, _createdAt desc){
+  _id,
+  _type,
+  employer,
+  title,
+  pinTitle,
+  desc,
+  img{
+    asset->{
+      _id,
+      url,
+      metadata{
+        dimensions
+      }
+    }
+  },
+  iconSlugs[]{
+    name,
+    iconSlug
+  },
+  link,
+  projectType,
+  featured,
+  order
+}` as const
+
 // About Section Query
 export const ABOUT_QUERY = `*[_type == "about"][0]{
   _id,
